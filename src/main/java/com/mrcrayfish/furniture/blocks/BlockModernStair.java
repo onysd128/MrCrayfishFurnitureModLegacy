@@ -34,7 +34,7 @@ public class BlockModernStair extends BlockFurniture
 
     public BlockModernStair()
     {
-        super(Material.WOOD);
+        super(Material.ROCK);
         this.setHardness(1.0F);
         this.setUnlocalizedName("modern_stair");
         this.setRegistryName("modern_stair");
