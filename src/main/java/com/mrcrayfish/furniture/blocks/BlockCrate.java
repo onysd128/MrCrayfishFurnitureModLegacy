@@ -3,6 +3,7 @@ package com.mrcrayfish.furniture.blocks;
 import com.mrcrayfish.furniture.MrCrayfishFurnitureMod;
 import com.mrcrayfish.furniture.init.FurnitureItems;
 import com.mrcrayfish.furniture.tileentity.TileEntityCrate;
+import com.mrcrayfish.furniture.util.InventoryUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -85,6 +86,13 @@ public class BlockCrate extends Block implements ITileEntityProvider
                     drop.setTagCompound(compound);
 
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop));
+                }
+                else
+                {
+                    InventoryUtil.dropTileEntityInventoryItems(worldIn, pos, worldIn.getTileEntity(pos));
+                    ItemStack drop = new ItemStack(this);
+                    worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop));
+                    super.breakBlock(worldIn, pos, state);
                 }
             }
         }
