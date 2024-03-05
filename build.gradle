@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "6.3.2-1.12.2"
+version = "6.4.0-1.12.2"
 group = "com.mrcrayfish"
 archivesBaseName = "furniture"
 
@@ -52,20 +52,20 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
-    compileOnly fg.deobf('CraftTweaker2:CraftTweaker2-API:1.12-4.1.20.675')
-    compileOnly fg.deobf('CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.675')
-    compileOnly fg.deobf('CraftTweaker2:ZenScript:1.12-4.1.20.675')
+    compileOnly fg.deobf('CraftTweaker2:CraftTweaker2-API:1.12-4.1.20.698')
+    compileOnly fg.deobf('CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698')
+    compileOnly fg.deobf('CraftTweaker2:ZenScript:1.12-4.1.20.698')
 }
 
 jar {
     manifest {
         attributes([
-                "Specification-Title": "MrCrayfish's Furniture Mod",
-                "Specification-Vendor": "MrCrayfish",
-                "Specification-Version": "1", // We are version 1 of ourselves
-                "Implementation-Title": project.name,
-                "Implementation-Version": "${version}",
-                "Implementation-Vendor" :"MrCrayfish",
+                "Specification-Title"     : "MrCrayfish's Furniture Mod Legacy",
+                "Specification-Vendor"    : "MrCrayfish",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "MrCrayfish",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

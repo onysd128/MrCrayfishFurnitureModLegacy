@@ -1,6 +1,3 @@
-MrCrayfishFurnitureMod
+MrCrayfish's Furniture Mod Legacy
 ======================
-
-MrCrayfish's Furniture Mod for Minecraft
-
-Download: https://mrcrayfish.com/mods?id=cfm
+Unofficial continuation of MrCrayfish's Furniture Mod with patches for Minecraft 1.12.2
