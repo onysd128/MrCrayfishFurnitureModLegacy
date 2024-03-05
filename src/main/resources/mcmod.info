@@ -2,9 +2,9 @@
   {
     "modid": "cfm",
     "name": "MrCrayfish's Furniture Mod Legacy",
-    "description": "Adds over 80 unique pieces of furniture to the game!",
-    "version": "6.4.0",
-    "mcversion": "1.12.2",
+    "description": "Unofficial continuation of MrCrayfish's Furniture Mod with patches for Minecraft 1.12.2 - Adds over 80 unique pieces of furniture to the game!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
     "url": "https://github.com/ACGaming/MrCrayfishFurnitureModLegacy",
     "authorList": ["MrCrayfish", "ACGaming"]
   }
