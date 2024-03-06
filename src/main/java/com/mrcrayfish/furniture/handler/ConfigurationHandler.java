@@ -23,7 +23,7 @@ public class ConfigurationHandler
     public static String[] trustedUrlDomains = {};
 
     public static boolean mirrorEnabled = true;
-    public static int mirrorQuality = 128;
+    public static int mirrorQuality = 64;
     public static float mirrorFov = 80F;
     public static boolean mirrorClouds = false;
 
