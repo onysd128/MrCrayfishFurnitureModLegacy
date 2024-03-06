@@ -1,6 +1,6 @@
 package com.mrcrayfish.furniture.util;
 
-import com.mrcrayfish.furniture.entity.EnittySteamFX;
+import com.mrcrayfish.furniture.entity.EntitySteamFX;
 import com.mrcrayfish.furniture.entity.EntityShowerFX;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
@@ -42,7 +42,7 @@ public class ParticleSpawner
                 }
                 else if(particleName.equals("smoke"))
                 {
-                    var21 = new EnittySteamFX(mc.world, par2, par4, par6, 0.01, 0.0000001, 0.01);
+                    var21 = new EntitySteamFX(mc.world, par2, par4, par6, 0.01, 0.0000001, 0.01);
                 }
 
                 mc.effectRenderer.addEffect(var21);
