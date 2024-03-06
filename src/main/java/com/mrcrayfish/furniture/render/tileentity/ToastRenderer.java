@@ -2,10 +2,10 @@ package com.mrcrayfish.furniture.render.tileentity;
 
 import com.mrcrayfish.furniture.tileentity.TileEntityToaster;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
-import org.lwjgl.opengl.GL11;
 
 public class ToastRenderer extends TileEntitySpecialRenderer<TileEntityToaster>
 {
@@ -22,9 +22,9 @@ public class ToastRenderer extends TileEntitySpecialRenderer<TileEntityToaster>
             if(slice != null)
             {
                 this.slots[i].setItem(slice);
-                GL11.glPushMatrix();
+                GlStateManager.pushMatrix();
                 slots[i].hoverStart = 0.0F;
-                GL11.glTranslatef((float) x + 0.5F, (float) y + 0.05F, (float) z + 0.3F);
+                GlStateManager.translate((float) x + 0.5F, (float) y + 0.05F, (float) z + 0.3F);
 
                 double xOffset = 0.0D;
                 double zOffset = 0.0D;
@@ -51,7 +51,7 @@ public class ToastRenderer extends TileEntitySpecialRenderer<TileEntityToaster>
                         {
                             zOffset -= 0.06F;
                         }
-                        GL11.glRotatef(270, 0, 1, 0);
+                        GlStateManager.rotate(270, 0, 1, 0);
                         break;
                     case 2:
                         if(i == 1)
@@ -62,7 +62,7 @@ public class ToastRenderer extends TileEntitySpecialRenderer<TileEntityToaster>
                         {
                             zOffset -= 0.26F;
                         }
-                        GL11.glRotatef(180, 0, 1, 0);
+                        GlStateManager.rotate(180, 0, 1, 0);
                         break;
                     case 3:
                         xOffset -= 0.2F;
@@ -74,13 +74,13 @@ public class ToastRenderer extends TileEntitySpecialRenderer<TileEntityToaster>
                         {
                             zOffset -= 0.06F;
                         }
-                        GL11.glRotatef(90, 0, 1, 0);
+                        GlStateManager.rotate(90, 0, 1, 0);
                         break;
                 }
 
                 double yOffset = tileEntityToaster.isToasting() ? -0.25 : -0.15;
                 Minecraft.getMinecraft().getRenderManager().renderEntity(slots[i], 0.0D + xOffset, yOffset, 0.0D + zOffset, 0.0F, 0.0F, false);
-                GL11.glPopMatrix();
+                GlStateManager.popMatrix();
             }
         }
     }

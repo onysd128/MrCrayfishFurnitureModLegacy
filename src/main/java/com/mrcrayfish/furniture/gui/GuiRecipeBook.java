@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.resources.I18n;
@@ -18,7 +19,6 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 import java.net.URL;
@@ -373,7 +373,7 @@ public class GuiRecipeBook extends GuiScreen
     {
         this.drawDefaultBackground();
 
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         int k = (this.width - this.bookWidth) / 2;
 
         this.mc.getTextureManager().bindTexture(page_1);
@@ -398,7 +398,7 @@ public class GuiRecipeBook extends GuiScreen
     {
         int k = this.width / 2;
         RecipePage page = pages.get(pageNum);
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
         RenderHelper.enableGUIStandardItemLighting();
         if(page.shouldDrawTitle())
         {
@@ -407,7 +407,7 @@ public class GuiRecipeBook extends GuiScreen
         }
         page.draw(this, k - 130, 40, mouseX, mouseY, partialTicks);
         page.drawOverlay(mc, this, k - 130, 40, mouseX, mouseY, partialTicks);
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     public void gotoPage(String type)
@@ -427,40 +427,40 @@ public class GuiRecipeBook extends GuiScreen
 
     public void drawPlainArrow(int x, int y)
     {
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
         this.mc.getTextureManager().bindTexture(page_1);
         this.drawTexturedModalRect(x, y, 36, 180, 22, 15);
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     public void drawProgressArrow(int x, int y, float partialTicks)
     {
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
         this.mc.getTextureManager().bindTexture(page_1);
         this.drawTexturedModalRect(x, y, 36, 180, 22, 15);
         int percent = (int) (progress + partialTicks) * 22 / 160;
         this.drawTexturedModalRect(x, y, 58, 180, percent + 1, 16);
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     public void drawTag(int x, int y)
     {
-        GL11.glPushMatrix();
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.pushMatrix();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(page_1);
         this.drawTexturedModalRect(x, y, 0, 200, 45, 18);
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     private ItemStack knife = new ItemStack(FurnitureItems.KNIFE);
 
     public void drawKnife(int x, int y)
     {
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
         int percent = progress * 16 / 160;
         if(percent >= 12) percent = 12;
         getItemRenderer().renderItemAndEffectIntoGUI(knife, x, y + percent);
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     public RenderItem getItemRenderer()
@@ -531,7 +531,7 @@ public class GuiRecipeBook extends GuiScreen
         {
             if(this.visible)
             {
-                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 mc.getTextureManager().bindTexture(GuiRecipeBook.page_1);
 
                 int u = 0;

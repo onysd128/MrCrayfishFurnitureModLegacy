@@ -4,10 +4,10 @@ import com.mrcrayfish.furniture.blocks.BlockBedsideCabinet;
 import com.mrcrayfish.furniture.gui.containers.ContainerBedsideCabinet;
 import com.mrcrayfish.furniture.init.FurnitureBlocks;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
 
 public class GuiBedsideCabinet extends GuiContainer
 {
@@ -48,7 +48,7 @@ public class GuiBedsideCabinet extends GuiContainer
     @Override
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.bindGuiTexture();
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;

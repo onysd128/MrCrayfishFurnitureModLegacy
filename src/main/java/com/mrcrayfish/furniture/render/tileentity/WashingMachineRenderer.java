@@ -2,9 +2,9 @@ package com.mrcrayfish.furniture.render.tileentity;
 
 import com.mrcrayfish.furniture.tileentity.TileEntityWashingMachine;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.item.EntityItem;
-import org.lwjgl.opengl.GL11;
 
 public class WashingMachineRenderer extends TileEntitySpecialRenderer<TileEntityWashingMachine>
 {
@@ -15,9 +15,9 @@ public class WashingMachineRenderer extends TileEntitySpecialRenderer<TileEntity
     {
         int metadata = machine.getBlockMetadata();
 
-        GL11.glPushMatrix();
-        GL11.glTranslatef((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
-        GL11.glRotatef(metadata * -90F, 0, 1, 0);
+        GlStateManager.pushMatrix();
+        GlStateManager.translate((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+        GlStateManager.rotate(metadata * -90F, 0, 1, 0);
         this.armour.hoverStart = 0.0F;
 
         for(int i = 0; i < 4; i++)
@@ -26,12 +26,12 @@ public class WashingMachineRenderer extends TileEntitySpecialRenderer<TileEntity
             {
                 double zOffset = getOffsetZ(metadata, i);
                 armour.setItem(machine.getStackInSlot(i));
-                GL11.glRotated(machine.progress * 5, 0, 0, 1);
+                GlStateManager.rotate(machine.progress * 5, 0, 0, 1);
                 Minecraft.getMinecraft().getRenderManager().renderEntity(armour, 0.0, -0.35D, zOffset, 0.0F, 0.0F, false);
             }
         }
 
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
     public double getOffsetZ(int metadata, int slot)

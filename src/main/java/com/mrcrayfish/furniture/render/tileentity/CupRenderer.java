@@ -4,7 +4,6 @@ import com.mrcrayfish.furniture.tileentity.TileEntityCup;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import org.lwjgl.opengl.GL11;
 
 public class CupRenderer extends TileEntitySpecialRenderer<TileEntityCup>
 {
@@ -15,7 +14,7 @@ public class CupRenderer extends TileEntitySpecialRenderer<TileEntityCup>
         {
             GlStateManager.pushMatrix();
             {
-                GL11.glTranslatef((float) x + 0.5F, (float) y, (float) z + 0.5F);
+                GlStateManager.translate((float) x + 0.5F, (float) y, (float) z + 0.5F);
 
                 GlStateManager.enableBlend();
                 OpenGlHelper.glBlendFunc(770, 771, 1, 0);
@@ -37,38 +36,38 @@ public class CupRenderer extends TileEntitySpecialRenderer<TileEntityCup>
 
     public void renderCuboid(float x1, float y1, float z1, float x2, float y2, float z2)
     {
-        GL11.glBegin(GL11.GL_QUADS);
+        GlStateManager.glBegin(7);
         {
-            GL11.glVertex3f(x1, y1, z1);
-            GL11.glVertex3f(x1, y1, z2);
-            GL11.glVertex3f(x1, y2, z2);
-            GL11.glVertex3f(x1, y2, z1);
+            GlStateManager.glVertex3f(x1, y1, z1);
+            GlStateManager.glVertex3f(x1, y1, z2);
+            GlStateManager.glVertex3f(x1, y2, z2);
+            GlStateManager.glVertex3f(x1, y2, z1);
 
-            GL11.glVertex3f(x2, y1, z1);
-            GL11.glVertex3f(x1, y1, z1);
-            GL11.glVertex3f(x1, y2, z1);
-            GL11.glVertex3f(x2, y2, z1);
+            GlStateManager.glVertex3f(x2, y1, z1);
+            GlStateManager.glVertex3f(x1, y1, z1);
+            GlStateManager.glVertex3f(x1, y2, z1);
+            GlStateManager.glVertex3f(x2, y2, z1);
 
-            GL11.glVertex3f(x1, y1, z2);
-            GL11.glVertex3f(x2, y1, z2);
-            GL11.glVertex3f(x2, y2, z2);
-            GL11.glVertex3f(x1, y2, z2);
+            GlStateManager.glVertex3f(x1, y1, z2);
+            GlStateManager.glVertex3f(x2, y1, z2);
+            GlStateManager.glVertex3f(x2, y2, z2);
+            GlStateManager.glVertex3f(x1, y2, z2);
 
-            GL11.glVertex3f(x2, y1, z2);
-            GL11.glVertex3f(x2, y1, z1);
-            GL11.glVertex3f(x2, y2, z1);
-            GL11.glVertex3f(x2, y2, z2);
+            GlStateManager.glVertex3f(x2, y1, z2);
+            GlStateManager.glVertex3f(x2, y1, z1);
+            GlStateManager.glVertex3f(x2, y2, z1);
+            GlStateManager.glVertex3f(x2, y2, z2);
 
-            GL11.glVertex3f(x1, y2, z1);
-            GL11.glVertex3f(x1, y2, z2);
-            GL11.glVertex3f(x2, y2, z2);
-            GL11.glVertex3f(x2, y2, z1);
+            GlStateManager.glVertex3f(x1, y2, z1);
+            GlStateManager.glVertex3f(x1, y2, z2);
+            GlStateManager.glVertex3f(x2, y2, z2);
+            GlStateManager.glVertex3f(x2, y2, z1);
 
-            GL11.glVertex3f(x1, y1, z1);
-            GL11.glVertex3f(x1, y1, z2);
-            GL11.glVertex3f(x2, y1, z2);
-            GL11.glVertex3f(x2, y1, z1);
+            GlStateManager.glVertex3f(x1, y1, z1);
+            GlStateManager.glVertex3f(x1, y1, z2);
+            GlStateManager.glVertex3f(x2, y1, z2);
+            GlStateManager.glVertex3f(x2, y1, z1);
         }
-        GL11.glEnd();
+        GlStateManager.glEnd();
     }
 }

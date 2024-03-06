@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import org.lwjgl.opengl.GL11;
 
 public class CookieRenderer extends TileEntitySpecialRenderer<TileEntityCookieJar>
 {
@@ -19,15 +18,15 @@ public class CookieRenderer extends TileEntitySpecialRenderer<TileEntityCookieJa
     {
         entityItem.setItem(cookie);
 
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
 
-        GL11.glDisable(GL11.GL_LIGHTING);
+        GlStateManager.disableLighting();
 
         this.entityItem.hoverStart = 0.0F;
-        GL11.glTranslatef((float) x + 0.5F, (float) y + 0.05F, (float) z + 0.18F);
-        GL11.glRotatef(180, 0, 1, 1);
+        GlStateManager.translate((float) x + 0.5F, (float) y + 0.05F, (float) z + 0.18F);
+        GlStateManager.rotate(180, 0, 1, 1);
         GlStateManager.translate(0, -0.1, 0);
-        GL11.glScalef(0.9F, 0.9F, 0.9F);
+        GlStateManager.scale(0.9F, 0.9F, 0.9F);
 
 
         int metadata = cookieJar.getBlockMetadata();
@@ -36,9 +35,9 @@ public class CookieRenderer extends TileEntitySpecialRenderer<TileEntityCookieJa
             Minecraft.getMinecraft().getRenderManager().renderEntity(entityItem, 0.0D, 0.0D, 0.1D * i, 0.0F, 0.0F, false);
         }
 
-        GL11.glEnable(GL11.GL_LIGHTING);
+        GlStateManager.enableLighting();
 
-        GL11.glPopMatrix();
+        GlStateManager.popMatrix();
     }
 
 }

@@ -9,14 +9,13 @@ import com.mrcrayfish.furniture.network.message.MessageMineBayClosed;
 import com.mrcrayfish.furniture.tileentity.TileEntityComputer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
 
 public class GuiComputer extends GuiContainer
 {
@@ -115,13 +114,13 @@ public class GuiComputer extends GuiContainer
     {
         this.fontRenderer.drawString(I18n.format("container.inventory"), 8, (ySize - 103), 4210752);
 
-        GL11.glPushMatrix();
+        GlStateManager.pushMatrix();
         RenderHelper.enableGUIStandardItemLighting();
-        GL11.glDisable(GL11.GL_LIGHTING);
-        GL11.glEnable(GL12.GL_RESCALE_NORMAL);
-        GL11.glEnable(GL11.GL_COLOR_MATERIAL);
-        GL11.glEnable(GL11.GL_LIGHTING);
-        GL11.glEnable(GL11.GL_BLEND);
+        GlStateManager.disableLighting();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.enableColorMaterial();
+        GlStateManager.enableLighting();
+        GlStateManager.enableBlend();
         itemRender.zLevel = 100.0F;
 
         if((itemNum - 1) >= 0)
@@ -146,14 +145,14 @@ public class GuiComputer extends GuiContainer
         itemRender.renderItemAndEffectIntoGUI(currency, 73, 40);
         itemRender.renderItemOverlays(this.fontRenderer, currency, 73, 40);
         itemRender.zLevel = 0.0F;
-        GL11.glDisable(GL11.GL_LIGHTING);
+        GlStateManager.disableLighting();
 
         int price = itemdata[itemNum].getPrice();
         this.fontRenderer.drawString("x" + Integer.toString(price), 90, 44, 0);
 
-        GL11.glPopMatrix();
-        GL11.glEnable(GL11.GL_LIGHTING);
-        GL11.glEnable(GL11.GL_DEPTH_TEST);
+        GlStateManager.popMatrix();
+        GlStateManager.enableLighting();
+        GlStateManager.enableDepth();
         RenderHelper.enableStandardItemLighting();
     }
 
@@ -173,7 +172,7 @@ public class GuiComputer extends GuiContainer
 
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(gui);
         int l = (width - xSize) / 2;
         int i1 = (height - ySize) / 2;

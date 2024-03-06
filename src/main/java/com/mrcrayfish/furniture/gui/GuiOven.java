@@ -3,10 +3,10 @@ package com.mrcrayfish.furniture.gui;
 import com.mrcrayfish.furniture.gui.containers.ContainerOven;
 import com.mrcrayfish.furniture.tileentity.TileEntityOven;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
 
 public class GuiOven extends GuiContainer
 {
@@ -47,7 +47,7 @@ public class GuiOven extends GuiContainer
         this.fontRenderer.drawString(I18n.format("tile.oven.name"), 70, 6, 4210752);
         this.fontRenderer.drawString(I18n.format("container.inventory"), 8, ySize - 94, 4210752);
 
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(GUI);
         if(oven.isCooking())
         {
@@ -68,7 +68,7 @@ public class GuiOven extends GuiContainer
     @Override
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(GUI);
         int l = (width - xSize) / 2;
         int i1 = (height - ySize) / 2;

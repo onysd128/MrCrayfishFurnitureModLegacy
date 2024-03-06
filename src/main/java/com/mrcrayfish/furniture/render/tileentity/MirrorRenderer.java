@@ -34,7 +34,7 @@ public class MirrorRenderer extends TileEntitySpecialRenderer<TileEntityMirror>
     private long renderEndNanoTime;
 
     private static Map<EntityMirror, Integer> registerMirrors = new ConcurrentHashMap<>();
-    private static List<Integer> pendingRemoval = Collections.synchronizedList(new ArrayList<Integer>());
+    private static List<Integer> pendingRemoval = Collections.synchronizedList(new ArrayList<>());
 
     public static void removeRegisteredMirror(EntityMirror entity)
     {
@@ -62,11 +62,11 @@ public class MirrorRenderer extends TileEntitySpecialRenderer<TileEntityMirror>
 
         if(!registerMirrors.containsKey(entityMirror))
         {
-            int newTextureId = GL11.glGenTextures();
+            int newTextureId = GlStateManager.generateTexture();
             GlStateManager.bindTexture(newTextureId);
-            GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGB, quality, quality, 0, GL11.GL_RGB, GL11.GL_UNSIGNED_BYTE, BufferUtils.createByteBuffer(3 * quality * quality));
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+            GlStateManager.glTexImage2D(3553, 0, 6407, quality, quality, 0, 6407, 5121, BufferUtils.createByteBuffer(3 * quality * quality).asIntBuffer());
+            GlStateManager.glTexParameteri(3553, 10240, 9728);
+            GlStateManager.glTexParameteri(3553, 10241, 9728);
             registerMirrors.put(mirror.getMirror(), newTextureId);
             return;
         }
@@ -83,8 +83,8 @@ public class MirrorRenderer extends TileEntitySpecialRenderer<TileEntityMirror>
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.bindTexture(registerMirrors.get(entityMirror));
 
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
-            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
+            GlStateManager.glTexParameteri(3553, 10241, 9728);
+            GlStateManager.glTexParameteri(3553, 10240, 9728);
 
             GlStateManager.translate(x + 0.5, y, z + 0.5);
             GlStateManager.rotate(-90F * facing.getHorizontalIndex() + 180F, 0, 1, 0);
@@ -93,18 +93,18 @@ public class MirrorRenderer extends TileEntitySpecialRenderer<TileEntityMirror>
             GlStateManager.enableRescaleNormal();
 
             // Render
-            GL11.glBegin(GL11.GL_QUADS);
+            GlStateManager.glBegin(7);
             {
-                GL11.glTexCoord2d(1, 0);
-                GL11.glVertex3d(0.0625, 0.0625, 0);
-                GL11.glTexCoord2d(0, 0);
-                GL11.glVertex3d(0.9375, 0.0625, 0);
-                GL11.glTexCoord2d(0, 1);
-                GL11.glVertex3d(0.9375, 0.9375, 0);
-                GL11.glTexCoord2d(1, 1);
-                GL11.glVertex3d(0.0625, 0.9375, 0);
+                GlStateManager.glTexCoord2f(1, 0);
+                GlStateManager.glVertex3f(0.0625F, 0.0625F, 0);
+                GlStateManager.glTexCoord2f(0, 0);
+                GlStateManager.glVertex3f(0.9375F, 0.0625F, 0);
+                GlStateManager.glTexCoord2f(0, 1);
+                GlStateManager.glVertex3f(0.9375F, 0.9375F, 0);
+                GlStateManager.glTexCoord2f(1, 1);
+                GlStateManager.glVertex3f(0.0625F, 0.9375F, 0);
             }
-            GL11.glEnd();
+            GlStateManager.glEnd();
 
             GlStateManager.disableRescaleNormal();
             GlStateManager.disableBlend();

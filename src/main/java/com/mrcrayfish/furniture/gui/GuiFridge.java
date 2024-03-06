@@ -2,10 +2,10 @@ package com.mrcrayfish.furniture.gui;
 
 import com.mrcrayfish.furniture.gui.containers.ContainerFridge;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
 
 public class GuiFridge extends GuiContainer
 {
@@ -36,7 +36,7 @@ public class GuiFridge extends GuiContainer
     @Override
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(gui);
         int l = (width - xSize) / 2;
         int i1 = (height - ySize) / 2;

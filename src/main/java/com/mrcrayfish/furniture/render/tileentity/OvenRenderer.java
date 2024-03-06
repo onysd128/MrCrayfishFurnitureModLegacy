@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
-import org.lwjgl.opengl.GL11;
 
 public class OvenRenderer extends TileEntitySpecialRenderer<TileEntityOven>
 {
@@ -19,7 +18,7 @@ public class OvenRenderer extends TileEntitySpecialRenderer<TileEntityOven>
 
         GlStateManager.pushMatrix();
         {
-            GL11.glDisable(GL11.GL_LIGHTING);
+            GlStateManager.disableLighting();
             GlStateManager.translate(x + 0.3, y + 0.52, z + 0.5);
             GlStateManager.scale(0.66, 0.66, 0.66);
 
