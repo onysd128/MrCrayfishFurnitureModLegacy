@@ -4,6 +4,7 @@ import com.mrcrayfish.furniture.advancement.Triggers;
 import com.mrcrayfish.furniture.api.RecipeAPI;
 import com.mrcrayfish.furniture.api.RecipeData;
 import com.mrcrayfish.furniture.init.FurnitureSounds;
+import com.mrcrayfish.furniture.items.ItemKnife;
 import com.mrcrayfish.furniture.tileentity.TileEntityToaster;
 import com.mrcrayfish.furniture.util.CollisionHelper;
 import com.mrcrayfish.furniture.util.TileEntityUtil;
@@ -23,7 +24,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class BlockToaster extends BlockFurnitureTile
 {
@@ -67,7 +70,7 @@ public class BlockToaster extends BlockFurnitureTile
             if(!heldItem.isEmpty() && !tileEntityToaster.isToasting())
             {
                 RecipeData data = RecipeAPI.getToasterRecipeFromInput(heldItem);
-                if(data != null)
+                if(data != null || heldItem.getItem() instanceof ItemKnife)
                 {
                     if(tileEntityToaster.addSlice(new ItemStack(heldItem.getItem(), 1)))
                     {
@@ -88,9 +91,15 @@ public class BlockToaster extends BlockFurnitureTile
                     {
                         tileEntityToaster.startToasting();
                         worldIn.updateComparatorOutputLevel(pos, this);
-                        if(!worldIn.isRemote)
+                        worldIn.playSound(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, FurnitureSounds.toaster_down, SoundCategory.BLOCKS, 0.75F, 1.0F, false);
+                        if(Arrays.stream(tileEntityToaster.slots).filter(Objects::nonNull).anyMatch(itemStack -> itemStack.getItem() instanceof ItemKnife))
                         {
-                            worldIn.playSound(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, FurnitureSounds.toaster_down, SoundCategory.BLOCKS, 0.75F, 1.0F, false);
+                            worldIn.playSound(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, FurnitureSounds.zap, SoundCategory.BLOCKS, 0.75F, 1.0F, false);
+                            if(!worldIn.isRemote)
+                            {
+                                worldIn.createExplosion(playerIn, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, 2.0F, true);
+                            }
+                            Triggers.trigger(Triggers.KNIFE_TOASTER, playerIn);
                         }
                     }
                 }

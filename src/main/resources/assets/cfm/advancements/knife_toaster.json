@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "cfm:item_knife"
+        },
+        "title": {
+            "translate": "advancements.cfm.knife_toaster"
+        },
+        "description": {
+            "translate": "advancements.cfm.knife_toaster.desc"
+        }
+    },
+	"parent": "cfm:appliance_city",
+	"criteria": {
+        "knife_toaster": {
+            "trigger": "cfm:knife_toaster"
+        }
+	}
+}

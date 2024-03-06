@@ -26,7 +26,6 @@ public class Triggers
     public static final BasicTrigger PLACE_BATHTROOM_FURNITURE = register("get_bathroom_furniture");
     public static final BasicTrigger PLACE_APPLIANCE = register("place_appliance");
     public static final BasicTrigger CREATE_COUCH_JEB = register("create_couch_jeb");
-
     public static final BasicTrigger UNWRAP_PRESENT = register("unwrap_present");
     public static final BasicTrigger OVEN_COOK = register("oven_cook");
     public static final BasicTrigger FREEZER_FREEZE = register("freezer_freeze");
@@ -34,12 +33,12 @@ public class Triggers
     public static final BasicTrigger PRINTER_COPY = register("printer_copy");
     public static final BasicTrigger STEREO_ACTIVATED = register("stereo_activated");
     public static final BasicTrigger CLICKED_DOORBELL = register("clicked_doorbell");
-
     public static final BasicTrigger PLAYER_ZAPPED = register("player_zapped");
     public static final BasicTrigger PLAYER_SENT_MAIL = register("player_sent_mail");
     public static final BasicTrigger PLAYER_GOT_MAIL = register("player_got_mail");
     public static final BasicTrigger PLAYER_FART = register("player_fart");
     public static final BasicTrigger PLAYER_SHOWER = register("player_shower");
+    public static final BasicTrigger KNIFE_TOASTER = register("knife_toaster");
 
     private static BasicTrigger register(String name)
     {
