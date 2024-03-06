@@ -51,7 +51,6 @@ public class BlockInflatableCastle extends BlockColored
             float height = entityIn.fallDistance;
             if(height > 0 && !entityIn.isSneaking())
             {
-                if(height > 4) height = 4;
                 entityIn.motionY = 0;
                 entityIn.addVelocity(0, getRequiredVelocity(height + 1), 0);
                 worldIn.playSound(null, pos, FurnitureSounds.bounce, SoundCategory.BLOCKS, 1.0F, 1.0F);

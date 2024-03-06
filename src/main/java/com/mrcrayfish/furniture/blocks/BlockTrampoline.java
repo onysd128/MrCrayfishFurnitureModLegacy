@@ -78,7 +78,6 @@ public class BlockTrampoline extends Block
             float height = entityIn.fallDistance;
             if(height > 0 && !entityIn.isSneaking())
             {
-                if(height > 9) height = 9;
                 entityIn.motionY = 0;
                 entityIn.addVelocity(0, getRequiredVelocity(height + 1), 0);
                 worldIn.playSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, FurnitureSounds.boing, SoundCategory.BLOCKS, 0.75F, 1.0F, false);

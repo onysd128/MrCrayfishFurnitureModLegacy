@@ -25,8 +25,6 @@ import java.util.Random;
 
 public class BlockDivingboard extends BlockFurniture
 {
-    public final int MAX_JUMP_HEIGHT = 4;
-
     private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 13 * 0.0625, 1.0);
 
     private static final AxisAlignedBB HANDLE_LEFT_NORTH = CollisionHelper.getBlockBounds(EnumFacing.NORTH, 0.0, 0.0, 0.0, 0.875, 1.0, 1.5 * 0.0625);
@@ -96,7 +94,6 @@ public class BlockDivingboard extends BlockFurniture
             float height = entityIn.fallDistance;
             if(height > 0 && !entityIn.isSneaking())
             {
-                if(height > MAX_JUMP_HEIGHT) height = MAX_JUMP_HEIGHT;
                 entityIn.motionY = 0;
                 entityIn.addVelocity(0, getRequiredVelocity(height + 1), 0);
                 worldIn.playSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, FurnitureSounds.boing, SoundCategory.BLOCKS, 0.75F, 0.75F, false);
