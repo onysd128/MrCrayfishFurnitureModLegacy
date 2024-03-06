@@ -53,9 +53,6 @@ public class MirrorRenderer extends TileEntitySpecialRenderer<TileEntityMirror>
         if(!ConfigurationHandler.mirrorEnabled)
             return;
 
-        if(TileEntityRendererDispatcher.instance.entity instanceof EntityMirror)
-            return;
-
         EntityMirror entityMirror = mirror.getMirror();
         if(entityMirror == null)
             return;
