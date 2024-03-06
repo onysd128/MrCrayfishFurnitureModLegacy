@@ -76,8 +76,8 @@ public class FurnitureItems
         CUP = new ItemCup(false).setUnlocalizedName("item_cup").setRegistryName("item_cup");
         DRINK = new ItemCup(true).setUnlocalizedName("item_drink").setRegistryName("item_drink");
         SOAP = new ItemGeneric().setUnlocalizedName("item_soap").setRegistryName("item_soap");
-        SOAPY_WATER = new ItemGeneric().setUnlocalizedName("item_soap_water").setRegistryName("item_soap_water").setContainerItem(Items.BUCKET).setMaxStackSize(1);
-        SUPER_SOAPY_WATER = new ItemGeneric().setUnlocalizedName("item_super_soap_water").setRegistryName("item_super_soap_water").setContainerItem(Items.BUCKET).setMaxStackSize(1);
+        SOAPY_WATER = new ItemGeneric().setUnlocalizedName("item_soap_water").setRegistryName("item_soap_water").setMaxStackSize(1);
+        SUPER_SOAPY_WATER = new ItemGeneric().setUnlocalizedName("item_super_soap_water").setRegistryName("item_super_soap_water").setMaxStackSize(1);
         RECIPE_BOOK = new ItemRecipeBook().setUnlocalizedName("item_recipe_book").setRegistryName("item_recipe_book");
         CRAYFISH = new Item().setUnlocalizedName("item_crayfish").setRegistryName("item_crayfish").setMaxStackSize(1);
         LOG = new ItemLog(FurnitureBlocks.FIRE_PIT_OFF).setUnlocalizedName("item_log").setRegistryName("item_log").setMaxStackSize(16);
