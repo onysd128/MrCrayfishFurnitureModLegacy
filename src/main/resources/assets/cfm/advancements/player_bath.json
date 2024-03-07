@@ -1,0 +1,19 @@
+{
+    "display": {
+        "icon": {
+            "item": "cfm:bath_bottom"
+        },
+        "title": {
+            "translate": "advancements.cfm.player_bath"
+        },
+        "description": {
+            "translate": "advancements.cfm.player_bath.desc"
+        }
+    },
+	"parent": "cfm:bathroom",
+	"criteria": {
+        "player_bath": {
+            "trigger": "cfm:player_bath"
+        }
+	}
+}

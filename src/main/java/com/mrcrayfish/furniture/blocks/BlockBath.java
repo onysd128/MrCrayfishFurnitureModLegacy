@@ -301,6 +301,10 @@ public class BlockBath extends BlockFurnitureTile
                 }
                 else
                 {
+                    if(tileEntityBath.hasWater())
+                    {
+                        Triggers.trigger(Triggers.PLAYER_BATH, playerIn);
+                    }
                     return SeatUtil.sitOnBlock(worldIn, pos.getX(), pos.getY(), pos.getZ(), playerIn, 0);
                 }
             }

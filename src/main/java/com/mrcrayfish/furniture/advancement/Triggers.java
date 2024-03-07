@@ -39,6 +39,7 @@ public class Triggers
     public static final BasicTrigger PLAYER_FART = register("player_fart");
     public static final BasicTrigger PLAYER_SHOWER = register("player_shower");
     public static final BasicTrigger KNIFE_TOASTER = register("knife_toaster");
+    public static final BasicTrigger PLAYER_BATH = register("player_bath");
 
     private static BasicTrigger register(String name)
     {
