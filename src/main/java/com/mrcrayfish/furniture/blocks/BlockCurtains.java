@@ -4,7 +4,6 @@ import com.mrcrayfish.furniture.advancement.Triggers;
 import com.mrcrayfish.furniture.init.FurnitureBlocks;
 import com.mrcrayfish.furniture.tileentity.TileEntityColoured;
 import com.mrcrayfish.furniture.util.CollisionHelper;
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -32,7 +31,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Locale;
 
-public abstract class BlockCurtains extends BlockFurniture implements ITileEntityProvider
+public abstract class BlockCurtains extends BlockFurnitureTile
 {
     public static final PropertyInteger COLOUR = PropertyInteger.create("colour", 0, 15);
     public static final PropertyEnum<Type> TYPE = PropertyEnum.create("type", Type.class);
@@ -65,15 +64,19 @@ public abstract class BlockCurtains extends BlockFurniture implements ITileEntit
         {
             Triggers.trigger(Triggers.PLACE_BLINDS_OR_CURTAINS, (EntityPlayer) placer);
         }
+        TileEntity tileEntity = world.getTileEntity(pos);
+        if(tileEntity instanceof TileEntityColoured)
+        {
+            ((TileEntityColoured) tileEntity).setColour(15 - stack.getMetadata());
+        }
         super.onBlockPlacedBy(world, pos, state, placer, stack);
     }
 
     @Nullable
     @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        final TileEntityColoured tileEntityColoured = new TileEntityColoured();
-        tileEntityColoured.setColour(15 - meta);
-        return tileEntityColoured;
+    public TileEntity createNewTileEntity(World worldIn, int meta)
+    {
+        return new TileEntityColoured();
     }
 
     @Override
