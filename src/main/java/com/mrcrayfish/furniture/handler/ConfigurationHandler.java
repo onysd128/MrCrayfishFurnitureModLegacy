@@ -1,31 +1,32 @@
 package com.mrcrayfish.furniture.handler;
 
-import com.mrcrayfish.furniture.api.RecipeRegistry;
-import com.mrcrayfish.furniture.api.Recipes;
-import com.mrcrayfish.furniture.integration.crafttweaker.CraftTweakerIntegration;
+import java.io.File;
+
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.io.File;
+import com.mrcrayfish.furniture.api.RecipeRegistry;
+import com.mrcrayfish.furniture.api.Recipes;
+import com.mrcrayfish.furniture.integration.crafttweaker.CraftTweakerIntegration;
 
 public class ConfigurationHandler
 {
-    public static Configuration config;
-
     public static final String CATEGORY_RECIPE_SETTINGS = "recipe-settings";
     public static final String CATEGORY_API = "recipe-api";
     public static final String CATEGORY_SETTINGS = "settings";
 
-    public static String[] items = {};
+    public static Configuration config;
+
     public static boolean api_debug = false;
+    public static boolean mirrorClouds = false;
+    public static boolean mirrorEnabled = true;
+    public static float mirrorFov = 80F;
+    public static int mirrorQuality = 64;
     public static String[] trustedUrlDomains = {};
 
-    public static boolean mirrorEnabled = true;
-    public static int mirrorQuality = 64;
-    public static float mirrorFov = 80F;
-    public static boolean mirrorClouds = false;
+    public static String[] items = {};
 
     public static boolean printer_1 = true, printer_2 = true;
     public static boolean oven_1 = true, oven_2 = true, oven_3 = true, oven_4 = true, oven_5 = true, oven_6 = true, oven_7 = true;
@@ -57,15 +58,18 @@ public class ConfigurationHandler
 
     public static void loadConfig(boolean shouldChange)
     {
-        mirrorEnabled = config.getBoolean("mirror-enabled", CATEGORY_SETTINGS, true, "Determines whether the mirror will be rendered.");
-        mirrorClouds = config.getBoolean("mirror-clouds", CATEGORY_SETTINGS, false, "Set whether the mirror should render clouds.");
-        mirrorFov = config.getFloat("mirror-fov", CATEGORY_SETTINGS, 80F, 10F, 100F, "Sets the field of view for the mirror.");
-        mirrorQuality = config.getInt("mirror-quality", CATEGORY_SETTINGS, 64, 16, 512, "Sets the resolution for the mirror. High number means better quality but worse performace.");
-        api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, false, "If true, prints out information about RecipeAPI. Recommended 'true' for people trying to add custom recipes.");
-        items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");
+        api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, false, "Whether to print out information about RecipeAPI. Recommended 'true' for people trying to add custom recipes.");
+        mirrorClouds = config.getBoolean("mirror-clouds", CATEGORY_SETTINGS, false, "Whether the mirror should render clouds.");
+        mirrorEnabled = config.getBoolean("mirror-enabled", CATEGORY_SETTINGS, true, "Whether the mirror should render a reflection.");
+        mirrorFov = config.getFloat("mirror-fov", CATEGORY_SETTINGS, 80F, 10F, 100F, "The field of view for the mirror.");
+        mirrorQuality = config.getInt("mirror-quality", CATEGORY_SETTINGS, 64, 16, 512, "The resolution for the mirror. Higher numbers result in better quality but worse performance.");
         trustedUrlDomains = config.getStringList("trusted-url-domains", CATEGORY_SETTINGS, trustedUrlDomains, "List of trusted domains to download images for the TV and Photo Frame. For example, the domain of the URL (https://i.imgur.com/Jvh1OQm.jpeg) is i.imgur.com");
-        config.addCustomCategoryComment(CATEGORY_RECIPE_SETTINGS, "Enabled or disable the default recipes");
-        config.addCustomCategoryComment(CATEGORY_API, "RecipeAPI Configuration. How to use: http://mrcrayfishs-furniture-mod.wikia.com/wiki/Configuration");
+
+        items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");
+
+        config.addCustomCategoryComment(CATEGORY_RECIPE_SETTINGS, "Enable or disable the default recipes");
+        config.addCustomCategoryComment(CATEGORY_API, "RecipeAPI Configuration. How to use: https://mrcrayfishs-furniture-mod.fandom.com/wiki/Configuration");
+
         updateEnabledRecipes();
 
         if(config.hasChanged() && shouldChange)
@@ -75,7 +79,7 @@ public class ConfigurationHandler
             RecipeRegistry.registerDefaultRecipes();
             RecipeRegistry.registerConfigRecipes();
             Recipes.addCommRecipesToLocal();
-            if (Loader.isModLoaded("crafttweaker"))
+            if(Loader.isModLoaded("crafttweaker"))
             {
                 CraftTweakerIntegration.apply();
             }
