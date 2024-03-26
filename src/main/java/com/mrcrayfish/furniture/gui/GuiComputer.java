@@ -91,12 +91,9 @@ public class GuiComputer extends GuiContainer
             if(!buySlot.isEmpty())
             {
                 ItemStack money = itemdata[itemNum].getCurrency();
-                if(buySlot.getItem() == money.getItem())
+                if(buySlot.getItem() == money.getItem() && buySlot.getItemDamage() == money.getItemDamage())
                 {
-                    if(buySlot.getItemDamage() == money.getItemDamage())
-                    {
-                        PacketHandler.INSTANCE.sendToServer(new MessageMineBayBuy(this.itemNum, this.tileEntityComputer.getPos().getX(), this.tileEntityComputer.getPos().getY(), this.tileEntityComputer.getPos().getZ()));
-                    }
+                    PacketHandler.INSTANCE.sendToServer(new MessageMineBayBuy(this.itemNum, this.tileEntityComputer.getPos().getX(), this.tileEntityComputer.getPos().getY(), this.tileEntityComputer.getPos().getZ()));
                 }
             }
         }
@@ -123,16 +120,23 @@ public class GuiComputer extends GuiContainer
         GlStateManager.enableBlend();
         itemRender.zLevel = 100.0F;
 
-        if((itemNum - 1) >= 0)
+        if((itemNum - 1) >= 0 && itemNum - 1 < itemdata.length)
         {
             ItemStack pre = itemdata[itemNum - 1].getInput();
             itemRender.renderItemAndEffectIntoGUI(pre, 57, 16);
             itemRender.renderItemOverlays(this.fontRenderer, pre, 57, 16);
         }
 
-        ItemStack stock = itemdata[itemNum].getInput();
-        itemRender.renderItemAndEffectIntoGUI(stock, 80, 16);
-        itemRender.renderItemOverlays(this.fontRenderer, stock, 80, 16);
+        if(itemNum < itemdata.length)
+        {
+            ItemStack stock = itemdata[itemNum].getInput();
+            itemRender.renderItemAndEffectIntoGUI(stock, 80, 16);
+            itemRender.renderItemOverlays(this.fontRenderer, stock, 80, 16);
+
+            ItemStack currency = itemdata[itemNum].getCurrency();
+            itemRender.renderItemAndEffectIntoGUI(currency, 73, 40);
+            itemRender.renderItemOverlays(this.fontRenderer, currency, 73, 40);
+        }
 
         if((itemNum + 1) < itemdata.length)
         {
@@ -141,14 +145,14 @@ public class GuiComputer extends GuiContainer
             itemRender.renderItemOverlays(this.fontRenderer, post, 103, 16);
         }
 
-        ItemStack currency = itemdata[itemNum].getCurrency();
-        itemRender.renderItemAndEffectIntoGUI(currency, 73, 40);
-        itemRender.renderItemOverlays(this.fontRenderer, currency, 73, 40);
         itemRender.zLevel = 0.0F;
         GlStateManager.disableLighting();
 
-        int price = itemdata[itemNum].getPrice();
-        this.fontRenderer.drawString("x" + Integer.toString(price), 90, 44, 0);
+        if(itemNum < itemdata.length)
+        {
+            int price = itemdata[itemNum].getPrice();
+            this.fontRenderer.drawString("x" + price, 90, 44, 0);
+        }
 
         GlStateManager.popMatrix();
         GlStateManager.enableLighting();
