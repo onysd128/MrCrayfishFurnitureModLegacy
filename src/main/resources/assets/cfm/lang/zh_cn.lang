@@ -582,7 +582,7 @@ cfm.message.toilet=按%s键放屁。
 keys.cfm.category=MrCrayfish 的家具
 key.fart.desc=放屁
 
-death.block.electric_fence=%s被电栅栏电死了。
+death.block.electrocution=%s被电栅栏电死了。
 
 advancements.cfm.title=MrCrayfish 的家具
 advancements.cfm.title.desc=里面包含家具 mod 的所有进度

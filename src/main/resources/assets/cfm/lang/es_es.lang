@@ -586,7 +586,7 @@ cfm.message.toilet=Presione %s para tirarse pedos.
 keys.cfm.category=Mod de Muebles de MrCrayfish
 key.fart.desc=Pedo
 
-death.block.electric_fence=%s fué electrocutado hasta morir
+death.block.electrocution=%s fué electrocutado hasta morir
 
 advancements.cfm.title=Mod de Muebles de MrCrayfish
 advancements.cfm.title.desc=Todos los avances en el Mod de Muebles

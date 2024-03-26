@@ -601,7 +601,7 @@ key.fart.desc=放屁
 
 # Death Message
 death.attack.electricFence=有人被電柵欄電死了！
-death.block.electric_fence=%s被電柵欄電死了
+death.block.electrocution=%s被電柵欄電死了
 
 # Advancement
 advancements.cfm.title=MrCrayfish傢俱模組

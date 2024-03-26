@@ -582,7 +582,7 @@ cfm.message.toilet=Нажмите %s, чтобы справить нужду.
 keys.cfm.category=MrCrayfish's Furniture Mod
 key.fart.desc=Справить нужду
 
-death.block.electric_fence=%s был убит электрическим забором
+death.block.electrocution=%s был убит электрическим забором
 
 advancements.cfm.title=MrCrayfish's Furniture Mod
 advancements.cfm.title.desc=Все достижения в Furniture Mod

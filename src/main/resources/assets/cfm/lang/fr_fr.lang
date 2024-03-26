@@ -582,7 +582,7 @@ cfm.message.toilet=Pressez %s pour péter.
 keys.cfm.category=MrCrayfish's Furniture Mod
 key.fart.desc=Péter
 
-death.block.electric_fence=%s a pris le coup de jus de trop!
+death.block.electrocution=%s a pris le coup de jus de trop!
 
 advancements.cfm.title=MrCrayfish's Furniture Mod
 advancements.cfm.title.desc=Toutes les succès du mod Furniture

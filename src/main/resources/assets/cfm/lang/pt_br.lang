@@ -582,7 +582,7 @@ cfm.message.toilet=Pressione %s para Peidos.
 keys.cfm.category=MrCrayfish's Furniture Mod
 key.fart.desc=Peido
 
-death.block.electric_fence=%s foi eletrocutado até a morte
+death.block.electrocution=%s foi eletrocutado até a morte
 
 advancements.cfm.title=MrCrayfish's Furniture Mod
 advancements.cfm.title.desc=Todos os avanços no Furniture Mod

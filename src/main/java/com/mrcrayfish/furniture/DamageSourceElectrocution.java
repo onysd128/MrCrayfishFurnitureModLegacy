@@ -5,9 +5,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 
-public class DamageSourceFence extends DamageSource
+public class DamageSourceElectrocution extends DamageSource
 {
-    public DamageSourceFence(String damageTypeIn)
+    public DamageSourceElectrocution(String damageTypeIn)
     {
         super(damageTypeIn);
     }
@@ -15,6 +15,6 @@ public class DamageSourceFence extends DamageSource
     @Override
     public ITextComponent getDeathMessage(EntityLivingBase entityLivingBaseIn)
     {
-        return new TextComponentTranslation("death.block.electric_fence", entityLivingBaseIn.getDisplayName());
+        return new TextComponentTranslation("death.block.electrocution", entityLivingBaseIn.getDisplayName());
     }
 }

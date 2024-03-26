@@ -1,6 +1,6 @@
 package com.mrcrayfish.furniture.blocks;
 
-import com.mrcrayfish.furniture.DamageSourceFence;
+import com.mrcrayfish.furniture.DamageSourceElectrocution;
 import com.mrcrayfish.furniture.advancement.Triggers;
 import com.mrcrayfish.furniture.init.FurnitureSounds;
 import net.minecraft.block.SoundType;
@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 
 public class BlockElectricFence extends BlockWhiteFence
 {
-    public static final DamageSource ELECTRIC_FENCE = new DamageSourceFence("electricFence");
+    public static final DamageSource ELECTRIC_FENCE = new DamageSourceElectrocution("electricFence");
 
     public BlockElectricFence(Material material)
     {

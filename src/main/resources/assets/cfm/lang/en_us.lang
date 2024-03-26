@@ -592,7 +592,7 @@ cfm.message.toilet=Press %s for Farts.
 keys.cfm.category=MrCrayfish's Furniture Mod
 key.fart.desc=Fart
 
-death.block.electric_fence=%s was zapped to death
+death.block.electrocution=%s was zapped to death
 
 advancements.cfm.title=MrCrayfish's Furniture Mod
 advancements.cfm.title.desc=All the advancements in the Furniture Mod
