@@ -1,7 +1,7 @@
 {
     "result": {
         "item": "cfm:esky",
-        "data": 11
+        "data": 8
     },
     "pattern": [
         "BBB",
@@ -16,7 +16,7 @@
         },
         "B": {
             "item": "minecraft:stained_hardened_clay",
-            "data": 11
+            "data": 8
         }
     }
 }
