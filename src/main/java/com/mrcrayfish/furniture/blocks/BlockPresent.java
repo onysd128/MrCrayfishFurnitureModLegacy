@@ -3,6 +3,7 @@ package com.mrcrayfish.furniture.blocks;
 import com.mrcrayfish.furniture.MrCrayfishFurnitureMod;
 import com.mrcrayfish.furniture.advancement.Triggers;
 import com.mrcrayfish.furniture.gui.inventory.ISimpleInventory;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import com.mrcrayfish.furniture.tileentity.TileEntityPresent;
 import com.mrcrayfish.furniture.util.InventoryUtil;
 import net.minecraft.block.Block;
@@ -74,7 +75,7 @@ public class BlockPresent extends Block implements ITileEntityProvider
         if(present != null)
         {
             world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.BLOCKS, 0.75F, 1.0F, false);
-            if(world.isRemote)
+            if(world.isRemote && ConfigurationHandler.seasonalPresents)
             {
                 player.sendMessage(new TextComponentTranslation("cfm.message.present_christmas", TextFormatting.RED + present.ownerName));
             }
