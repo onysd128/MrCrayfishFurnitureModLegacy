@@ -207,10 +207,10 @@ public abstract class BlockCurtains extends BlockFurnitureTile
     @Override
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity tileEntity, ItemStack stack)
     {
-        if (tileEntity instanceof TileEntityColoured)
+        if(tileEntity instanceof TileEntityColoured)
         {
-            TileEntityColoured couch = (TileEntityColoured) tileEntity;
-            ItemStack itemstack = new ItemStack(FurnitureBlocks.CURTAINS_CLOSED, 1, couch.getColour());
+            TileEntityColoured curtains = (TileEntityColoured) tileEntity;
+            ItemStack itemstack = new ItemStack(FurnitureBlocks.CURTAINS, 1, curtains.getColour());
             spawnAsEntity(worldIn, pos, itemstack);
         }
         else
@@ -250,7 +250,7 @@ public abstract class BlockCurtains extends BlockFurnitureTile
         {
             metadata = ((TileEntityColoured) tileEntity).getColour();
         }
-        return new ItemStack(FurnitureBlocks.CURTAINS_CLOSED, 1, metadata);
+        return new ItemStack(FurnitureBlocks.CURTAINS, 1, metadata);
     }
 
     public abstract boolean isOpen();
