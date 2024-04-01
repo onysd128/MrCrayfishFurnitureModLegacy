@@ -3,7 +3,6 @@ package com.mrcrayfish.furniture.blocks;
 import com.mrcrayfish.furniture.MrCrayfishFurnitureMod;
 import com.mrcrayfish.furniture.init.FurnitureSounds;
 import com.mrcrayfish.furniture.tileentity.TileEntityEsky;
-import com.mrcrayfish.furniture.tileentity.TileEntityKitchenCounter;
 import com.mrcrayfish.furniture.util.CollisionHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -182,9 +181,9 @@ public class BlockEsky extends BlockFurnitureTile
     {
         int metadata = 0;
         TileEntity tileEntity = world.getTileEntity(pos);
-        if(tileEntity instanceof TileEntityKitchenCounter)
+        if(tileEntity instanceof TileEntityEsky)
         {
-            metadata = ((TileEntityKitchenCounter) tileEntity).getColour();
+            metadata = ((TileEntityEsky) tileEntity).getColour();
         }
         return new ItemStack(this, 1, metadata);
     }
