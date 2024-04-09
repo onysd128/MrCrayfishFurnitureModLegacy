@@ -19,6 +19,8 @@ public class ConfigurationHandler
 
     public static Configuration config;
 
+    public static boolean allowAllDishwasher = false;
+    public static boolean allowAllWashingMachine = false;
     public static boolean api_debug = false;
     public static boolean mirrorClouds = false;
     public static boolean mirrorEnabled = true;
@@ -60,6 +62,8 @@ public class ConfigurationHandler
 
     public static void loadConfig(boolean shouldChange)
     {
+        allowAllDishwasher = config.getBoolean("allow-all-dishwasher", CATEGORY_SETTINGS, false, "Whether to allow all tools to be cleaned inside a dishwasher.");
+        allowAllWashingMachine = config.getBoolean("allow-all-washing-machine", CATEGORY_SETTINGS, false, "Whether to allow all armor to be cleaned inside a washing machine.");
         api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, false, "Whether to print out information about RecipeAPI. Recommended 'true' for people trying to add custom recipes.");
         mirrorClouds = config.getBoolean("mirror-clouds", CATEGORY_SETTINGS, false, "Whether the mirror should render clouds.");
         mirrorEnabled = config.getBoolean("mirror-enabled", CATEGORY_SETTINGS, true, "Whether the mirror should render a reflection.");

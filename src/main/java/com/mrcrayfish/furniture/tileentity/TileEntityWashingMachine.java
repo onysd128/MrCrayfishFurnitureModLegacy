@@ -3,6 +3,7 @@ package com.mrcrayfish.furniture.tileentity;
 import com.mrcrayfish.furniture.api.RecipeAPI;
 import com.mrcrayfish.furniture.api.RecipeData;
 import com.mrcrayfish.furniture.gui.containers.ContainerWashingMachine;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import com.mrcrayfish.furniture.init.FurnitureItems;
 import com.mrcrayfish.furniture.init.FurnitureSounds;
 import com.mrcrayfish.furniture.network.PacketHandler;
@@ -13,6 +14,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -81,6 +83,10 @@ public class TileEntityWashingMachine extends TileEntityFurniture implements ISi
         {
             if(!getStackInSlot(i).isEmpty())
             {
+                if(ConfigurationHandler.allowAllWashingMachine && getStackInSlot(i).getItem() instanceof ItemArmor)
+                {
+                    return true;
+                }
                 RecipeData data = RecipeAPI.getWashingMachineRecipeFromInput(getStackInSlot(i));
                 if(data != null)
                 {

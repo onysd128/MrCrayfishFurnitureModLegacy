@@ -3,6 +3,7 @@ package com.mrcrayfish.furniture.tileentity;
 import com.mrcrayfish.furniture.api.RecipeAPI;
 import com.mrcrayfish.furniture.api.RecipeData;
 import com.mrcrayfish.furniture.gui.containers.ContainerDishwasher;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import com.mrcrayfish.furniture.init.FurnitureItems;
 import com.mrcrayfish.furniture.init.FurnitureSounds;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,6 +11,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -74,6 +76,10 @@ public class TileEntityDishwasher extends TileEntityFurniture implements ISidedI
         {
             if(!inventory.get(i).isEmpty())
             {
+                if(ConfigurationHandler.allowAllDishwasher && inventory.get(i).getItem() instanceof ItemTool)
+                {
+                    return true;
+                }
                 RecipeData data = RecipeAPI.getDishwasherRecipeFromInput(inventory.get(i));
                 if(data == null)
                 {
