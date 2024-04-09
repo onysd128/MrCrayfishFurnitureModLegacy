@@ -26,6 +26,7 @@ public class ConfigurationHandler
     public static int mirrorQuality = 64;
     public static boolean seasonalPresents = true;
     public static String[] trustedUrlDomains = {};
+    public static String trustedUrlDomainsListType = "WHITELIST";
 
     public static String[] items = {};
 
@@ -66,6 +67,7 @@ public class ConfigurationHandler
         mirrorQuality = config.getInt("mirror-quality", CATEGORY_SETTINGS, 64, 16, 512, "The resolution for the mirror. Higher numbers result in better quality but worse performance.");
         seasonalPresents = config.getBoolean("seasonal-presents", CATEGORY_SETTINGS, true, "Whether opening presents should display a Happy Christmas notification.");
         trustedUrlDomains = config.getStringList("trusted-url-domains", CATEGORY_SETTINGS, trustedUrlDomains, "List of trusted domains to download images for the TV and Photo Frame. For example, the domain of the URL (https://i.imgur.com/Jvh1OQm.jpeg) is i.imgur.com");
+        trustedUrlDomainsListType = config.getString("trusted-url-domains-list-type", CATEGORY_SETTINGS, "WHITELIST", "Which list type the list of trusted domain is. Can be either WHITELIST or BLACKLIST.");
 
         items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");
 

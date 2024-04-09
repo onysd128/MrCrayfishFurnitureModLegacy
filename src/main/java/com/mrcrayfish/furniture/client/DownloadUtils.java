@@ -5,6 +5,7 @@ import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import javax.annotation.Nullable;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 /**
  * Author: MrCrayfish
@@ -67,15 +68,7 @@ public class DownloadUtils
         {
             domain = domain.substring(4);
         }
-        boolean trusted = false;
-        for(String trustedDomain : ConfigurationHandler.trustedUrlDomains)
-        {
-            if(domain.equals(trustedDomain))
-            {
-                trusted = true;
-                break;
-            }
-        }
-        return trusted;
+        boolean match = Arrays.asList(ConfigurationHandler.trustedUrlDomains).contains(domain);
+        return ConfigurationHandler.trustedUrlDomainsListType.equals("WHITELIST") == match;
     }
 }
