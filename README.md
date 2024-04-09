@@ -1,3 +1,50 @@
-MrCrayfish's Furniture Mod Legacy
-======================
-Unofficial continuation of MrCrayfish's Furniture Mod with patches for Minecraft 1.12.2
+[![BisectHosting](https://i.imgur.com/6AzSqYg.png)](https://bisecthosting.com/ACGaming)
+
+# MRCRAYFISH'S FURNITURE MOD LEGACY
+
+### **MrCrayfish's Furniture Mod Legacy** is a fork of [**MrCrayfish's Furniture Mod**](https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod) by [**MrCrayfish**](https://www.curseforge.com/members/mrcrayfish), patching long-lasting bugs and adding additional features.
+
+This mod is an **unofficial** continuation and is not affiliated with MrCrayfish as he dropped development for Minecraft 1.12.2.
+
+**Changes so far:**
+
+* Added bath advancement
+* Added computer GUI item data range checks
+* Added dishwasher & washing machine input configs
+* Added seasonal presents config setting
+* Added toaster easter egg
+* Added trusted URL domains list type config
+* Adjusted block hardness values
+* Enabled infinite mirror reflections
+* Fixed blinds always returning oak
+* Fixed breaking of curtains
+* Fixed colors of curtains
+* Fixed dropping of unsealed crate content when broken
+* Fixed duplication and shift-clicking in envelopes, crates and presents
+* Fixed farting button handling
+* Fixed modern stairs block material
+* Fixed pick block functionality for coolers
+* Fixed recipes for coolers
+* Fixed soapy water bucket duplication
+* Fixed steam particle typo
+* Made ceiling fan placeable in any orientation, add advancement
+* Removed arbitrary jump height limits
+* Restructured configuration handler
+* Streamlined default mirror quality config
+* Streamlined electrocution damage source
+* Updated dependencies, adjusted metadata
+* Utilized GlStateManager where applicable
+
+# MRCRAYFISH'S FURNITURE MOD
+
+### **MrCrayfish's Furniture Mod** is all about adding functioning and useful furniture and decorations. You will be able to find furniture for every part of your house, including the kitchen, bedroom, dinning, outdoors, and more! Currently adding over eighty unique blocks, the mod in continuely growing with new updates.
+
+**Features:**
+* Includes over eighty unique pieces of furniture!
+* Working functionality in most blocks, not just decorative.
+* Textures of models are based on the current resource pack
+* A fully working mail system. Send items and blocks to players around your server!
+
+**MrCrayfish's Furniture Mod** is licensed under the [**GNU General Public License v3.0**](https://choosealicense.com/licenses/gpl-3.0) license.
+
+[**Check out the original mod post!**](https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod)
