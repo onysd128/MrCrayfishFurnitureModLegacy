@@ -24,7 +24,7 @@ public class DoorMatRenderer extends TileEntitySpecialRenderer<TileEntityDoorMat
                 GlStateManager.pushMatrix();
                 {
                     GlStateManager.translate(x, y, z);
-                    GlStateManager.translate(0.5, 0.0626F, 0.5);
+                    GlStateManager.translate(0.5, 0.07F, 0.5);
                     GlStateManager.rotate(-90F * rotation, 0, 1, 0);
                     GlStateManager.rotate(180F, 0, 1, 0);
                     GlStateManager.rotate(-90F, 1, 0, 0);
