@@ -1,0 +1,8 @@
+{
+    "parent": "cfm:item/desk_cabinet",
+    "textures": {
+        "top": "blocks/hardened_clay_stained_black",
+        "primary": "modid:blocks/log_texture",
+        "secondary": "modid:blocks/planks_texture"
+    }
+}

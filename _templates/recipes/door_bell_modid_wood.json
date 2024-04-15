@@ -1,0 +1,18 @@
+{
+    "result": {
+        "item": "cfm:door_bell_modid_wood"
+    },
+    "ingredients": [
+        {
+            "item": "minecraft:noteblock"
+        },
+        {
+            "item": "minecraft:stone_button"
+        },
+        {
+            "item": "modid:log",
+            "data": log
+        }
+    ],
+    "type": "minecraft:crafting_shapeless"
+}

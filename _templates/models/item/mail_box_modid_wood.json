@@ -1,0 +1,7 @@
+{
+	"parent": "cfm:block/mail_box",
+	"textures": {
+		"primary": "modid:blocks/planks_texture",
+		"secondary": "modid:blocks/log_texture"
+	}
+}

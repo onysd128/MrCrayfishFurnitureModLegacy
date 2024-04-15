@@ -1,0 +1,7 @@
+{
+	"parent": "cfm:block/chair",
+	"textures": {
+		"1": "modid:blocks/planks_texture",
+		"2": "modid:blocks/log_texture"
+	}
+}

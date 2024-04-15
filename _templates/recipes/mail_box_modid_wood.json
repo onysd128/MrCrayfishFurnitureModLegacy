@@ -1,0 +1,24 @@
+{
+    "result": {
+        "item": "cfm:mail_box_modid_wood"
+    },
+    "pattern": [
+        "LBL",
+        "PPP",
+        " P "
+    ],
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "B": {
+            "item": "minecraft:book"
+        },
+        "P": {
+            "item": "modid:planks",
+            "data": planks
+        },
+        "L": {
+            "item": "modid:log",
+            "data": log
+        }
+    }
+}

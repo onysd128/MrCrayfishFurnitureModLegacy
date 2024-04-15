@@ -1,0 +1,11 @@
+modid_wood
+modid:blocks/log_texture
+modid:blocks/planks_texture
+modid:blocks/leaves_texture
+"item": "modid:log"
+"data": log
+"item": "modid:planks"
+"data": planks
+"item": "modid:leaves"
+"data": leaves
+Mod Wood

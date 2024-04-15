@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "cfm:hedge_modid_wood",
+    "count": 4
+  },
+  "pattern": [
+    "***",
+    "***"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "modid:leaves",
+      "data": leaves
+    }
+  }
+}

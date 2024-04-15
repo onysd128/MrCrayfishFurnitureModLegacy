@@ -1,0 +1,21 @@
+{
+    "result": {
+        "item": "cfm:upgraded_fence_modid_wood",
+        "count": 8
+    },
+    "pattern": [
+        "FFF",
+        "FLF",
+        "FFF"
+    ],
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "F": {
+            "item": "minecraft:modid_wood_fence"
+        },
+        "L": {
+            "item": "modid:log",
+            "data": log
+        }
+    }
+}

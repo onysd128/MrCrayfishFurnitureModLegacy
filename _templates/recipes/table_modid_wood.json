@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "cfm:table_modid_wood"
+  },
+  "pattern": [
+    "***",
+    " * ",
+    " * "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "modid:planks",
+      "data": planks
+    }
+  }
+}
