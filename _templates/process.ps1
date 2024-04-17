@@ -25,6 +25,10 @@ $keys = @(
     '"data": planks',
     '"item": "modid:leaves"',
     '"data": leaves',
+    '"item": "modid:fence"',
+    '"data": fence',
+    '"item": "modid:gate"',
+    '"data": gate',
     "Mod Wood"
 )
 

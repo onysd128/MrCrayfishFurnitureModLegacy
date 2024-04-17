@@ -1,21 +1,21 @@
 {
-    "result": {
-        "item": "cfm:crate_modid_wood"
+  "result": {
+    "item": "cfm:crate_modid_wood"
+  },
+  "pattern": [
+    "DOD",
+    "O O",
+    "DOD"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "modid:log",
+      "data": log
     },
-    "pattern": [
-        "DOD",
-        "O O",
-        "DOD"
-    ],
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "D": {
-            "item": "modid:log",
-            "data": log
-        },
-        "O": {
-            "item": "modid:planks",
-            "data": planks
-        }
+    "O": {
+      "item": "modid:planks",
+      "data": planks
     }
+  }
 }

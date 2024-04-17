@@ -1,21 +1,21 @@
 {
-    "result": {
-        "item": "cfm:blinds_modid_wood_open",
-        "count": 2
+  "result": {
+    "item": "cfm:blinds_modid_wood_open",
+    "count": 2
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "modid:log",
+      "data": log
     },
-    "pattern": [
-        "LLL",
-        "SSS",
-        "SSS"
-    ],
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "L": {
-            "item": "modid:log",
-            "data": log
-        },
-        "S": {
-            "item": "minecraft:stick"
-        }
+    "S": {
+      "item": "minecraft:stick"
     }
+  }
 }

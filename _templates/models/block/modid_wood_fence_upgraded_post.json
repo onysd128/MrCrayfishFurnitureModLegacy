@@ -1,6 +1,6 @@
 {
-    "parent": "cfm:block/fence_upgraded_post",
-    "textures": {
-        "log": "modid:blocks/log_texture"
-    }
+  "parent": "cfm:block/fence_upgraded_post",
+  "textures": {
+    "log": "modid:blocks/log_texture"
+  }
 }

@@ -1,16 +1,17 @@
 {
-    "result": {
-        "item": "cfm:upgraded_gate_modid_wood",
-        "count": 2
+  "result": {
+    "item": "cfm:upgraded_gate_modid_wood",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "modid:fence_gate",
+      "data": fence_gate
     },
-    "ingredients": [
-        {
-            "item": "minecraft:modid_wood_fence_gate"
-        },
-        {
-            "item": "modid:log",
-            "data": log
-        }
-    ],
-    "type": "minecraft:crafting_shapeless"
+    {
+      "item": "modid:log",
+      "data": log
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
 }

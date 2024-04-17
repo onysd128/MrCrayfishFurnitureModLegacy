@@ -1,21 +1,21 @@
 {
-    "result": {
-        "item": "cfm:desk_modid_wood"
+  "result": {
+    "item": "cfm:desk_modid_wood"
+  },
+  "pattern": [
+    "LLL",
+    "P P",
+    "P P"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "modid:log",
+      "data": log
     },
-    "pattern": [
-        "LLL",
-        "P P",
-        "P P"
-    ],
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "L": {
-            "item": "modid:log",
-            "data": log
-        },
-        "P": {
-            "item": "modid:planks",
-            "data": planks
-        }
+    "P": {
+      "item": "modid:planks",
+      "data": planks
     }
+  }
 }

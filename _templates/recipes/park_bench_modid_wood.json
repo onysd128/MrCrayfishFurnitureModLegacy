@@ -1,22 +1,22 @@
 {
-    "result": {
-        "item": "cfm:park_bench_modid_wood",
-        "count": 2
+  "result": {
+    "item": "cfm:park_bench_modid_wood",
+    "count": 2
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "L L"
+  ],
+  "key": {
+    "P": {
+      "item": "modid:planks",
+      "data": planks
     },
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "PPP",
-        "PPP",
-        "L L"
-    ],
-    "key": {
-        "P": {
-            "item": "modid:planks",
-            "data": planks
-        },
-        "L": {
-            "item": "modid:log",
-            "data": log
-        }
+    "L": {
+      "item": "modid:log",
+      "data": log
     }
+  }
 }

@@ -1,7 +1,7 @@
 {
-    "parent": "cfm:block/upgraded_gate_right_closed",
-    "textures": {
-        "log": "modid:blocks/log_texture",
-        "plank": "modid:blocks/planks_texture"
-    }
+  "parent": "cfm:block/upgraded_gate_right_closed",
+  "textures": {
+    "log": "modid:blocks/log_texture",
+    "plank": "modid:blocks/planks_texture"
+  }
 }
