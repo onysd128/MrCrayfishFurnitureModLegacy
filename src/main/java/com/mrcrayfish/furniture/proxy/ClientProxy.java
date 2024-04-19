@@ -2,10 +2,12 @@ package com.mrcrayfish.furniture.proxy;
 
 import com.mrcrayfish.furniture.client.GifCache;
 import com.mrcrayfish.furniture.handler.ClientEvents;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import com.mrcrayfish.furniture.handler.GuiDrawHandler;
 import com.mrcrayfish.furniture.handler.InputHandler;
 import com.mrcrayfish.furniture.init.FurnitureBlocks;
 import com.mrcrayfish.furniture.init.FurnitureItems;
+import com.mrcrayfish.furniture.integration.biomesoplenty.FurnitureBlocksBOP;
 import com.mrcrayfish.furniture.render.tileentity.*;
 import com.mrcrayfish.furniture.tileentity.*;
 import net.minecraft.block.Block;
@@ -25,6 +27,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.awt.*;
@@ -117,6 +120,19 @@ public class ClientProxy extends CommonProxy
         registerColorHandlerForBlock(FurnitureBlocks.TREE_BOTTOM, christmasBlockColor, christmasItemColor);
         registerColorHandlerForBlock(FurnitureBlocks.TREE_TOP, christmasBlockColor, christmasItemColor);
         registerColorHandlerForBlock(FurnitureBlocks.WREATH, christmasBlockColor, christmasItemColor);
+
+        if(Loader.isModLoaded("biomesoplenty") && ConfigurationHandler.integrationBiomesOPlenty)
+        {
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_CHERRY, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_EBONY, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_EUCALYPTUS, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_MAHOGANY, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_MANGROVE, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_PALM, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_PINE, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_SACRED_OAK, hedgeBlockColorNew, hedgeItemColor);
+            registerColorHandlerForBlock(FurnitureBlocksBOP.HEDGE_BIOMESOPLENTY_WILLOW, hedgeBlockColorNew, hedgeItemColor);
+        }
     }
 
     public void registerColorHandlerForBlock(Block block, IBlockColor blockColor, IItemColor itemColor)

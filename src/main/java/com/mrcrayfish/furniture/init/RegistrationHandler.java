@@ -1,6 +1,8 @@
 package com.mrcrayfish.furniture.init;
 
 import com.mrcrayfish.furniture.Reference;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
+import com.mrcrayfish.furniture.integration.biomesoplenty.FurnitureBlocksBOP;
 import com.mrcrayfish.furniture.items.SubItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -12,6 +14,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -130,5 +133,10 @@ public class RegistrationHandler
         FurnitureItems.register();
         FurnitureSounds.register();
         FurnitureCrafting.register();
+
+        if(Loader.isModLoaded("biomesoplenty") && ConfigurationHandler.integrationBiomesOPlenty)
+        {
+            FurnitureBlocksBOP.register();
+        }
     }
 }

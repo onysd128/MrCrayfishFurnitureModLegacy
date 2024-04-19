@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "cfm:coffee_table_biomesoplenty_willow"
+  },
+  "pattern": [
+    "***",
+    "* *"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "biomesoplenty:planks_0",
+      "data": 9
+    }
+  }
+}
+
+
+

@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "cfm:upgraded_gate_biomesoplenty_hellbark",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "biomesoplenty:hellbark_fence_gate",
+      "data": 0
+    },
+    {
+      "item": "biomesoplenty:log_2",
+      "data": 7
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
+
+
+

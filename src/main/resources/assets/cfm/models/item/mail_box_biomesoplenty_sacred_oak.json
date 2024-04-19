@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:block/mail_box",
+  "textures": {
+    "primary": "biomesoplenty:blocks/sacred_oak_planks",
+    "secondary": "biomesoplenty:blocks/sacred_oak_log"
+  }
+}
+
+
+
+

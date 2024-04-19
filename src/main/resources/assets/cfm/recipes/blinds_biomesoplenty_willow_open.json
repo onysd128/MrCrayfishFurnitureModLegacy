@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:blinds_biomesoplenty_willow_open",
+    "count": 2
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "biomesoplenty:log_2",
+      "data": 5
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}
+
+
+

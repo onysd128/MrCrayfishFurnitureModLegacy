@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:desk_biomesoplenty_jacaranda"
+  },
+  "pattern": [
+    "LLL",
+    "P P",
+    "P P"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "biomesoplenty:log_3",
+      "data": 4
+    },
+    "P": {
+      "item": "biomesoplenty:planks_0",
+      "data": 12
+    }
+  }
+}
+
+
+

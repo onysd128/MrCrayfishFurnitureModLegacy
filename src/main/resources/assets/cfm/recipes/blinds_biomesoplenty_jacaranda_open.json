@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:blinds_biomesoplenty_jacaranda_open",
+    "count": 2
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "biomesoplenty:log_3",
+      "data": 4
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}
+
+
+

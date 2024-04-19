@@ -1,0 +1,27 @@
+{
+  "result": {
+    "item": "cfm:upgraded_fence_biomesoplenty_pine",
+    "count": 8
+  },
+  "pattern": [
+    "FFF",
+    "FLF",
+    "FFF"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "item": "biomesoplenty:pine_fence",
+      "data": 0
+    },
+    "L": {
+      "item": "biomesoplenty:log_2",
+      "data": 6
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,west=false": {"model": "cfm:hedge_none_biomesoplenty_redwood", "uvlock": true},
+    "east=false,north=true,south=false,west=false": {"model": "cfm:hedge_one_biomesoplenty_redwood", "uvlock": true},
+    "east=true,north=false,south=false,west=false": {"model": "cfm:hedge_one_biomesoplenty_redwood", "y": 90, "uvlock": true},
+    "east=false,north=false,south=true,west=false": {"model": "cfm:hedge_one_biomesoplenty_redwood", "y": 180, "uvlock": true},
+    "east=false,north=false,south=false,west=true": {"model": "cfm:hedge_one_biomesoplenty_redwood", "y": 270, "uvlock": true},
+    "east=true,north=true,south=false,west=false": {"model": "cfm:hedge_two_biomesoplenty_redwood", "uvlock": true},
+    "east=false,north=true,south=true,west=false": {"model": "cfm:hedge_two_alt_biomesoplenty_redwood", "uvlock": true},
+    "east=false,north=true,south=false,west=true": {"model": "cfm:hedge_two_biomesoplenty_redwood", "y": 270, "uvlock": true},
+    "east=true,north=false,south=false,west=true": {"model": "cfm:hedge_two_alt_biomesoplenty_redwood", "y": 90, "uvlock": true},
+    "east=true,north=false,south=true,west=false": {"model": "cfm:hedge_two_biomesoplenty_redwood", "y": 90, "uvlock": true},
+    "east=false,north=false,south=true,west=true": {"model": "cfm:hedge_two_biomesoplenty_redwood", "y": 180, "uvlock": true},
+    "east=true,north=true,south=true,west=true": {"model": "cfm:hedge_four_biomesoplenty_redwood", "uvlock": true},
+    "east=true,north=true,south=true,west=false": {"model": "cfm:hedge_three_biomesoplenty_redwood", "uvlock": true},
+    "east=true,north=true,south=false,west=true": {"model": "cfm:hedge_three_biomesoplenty_redwood", "y": 270, "uvlock": true},
+    "east=false,north=true,south=true,west=true": {"model": "cfm:hedge_three_biomesoplenty_redwood", "y": 180, "uvlock": true},
+    "east=true,north=false,south=true,west=true": {"model": "cfm:hedge_three_biomesoplenty_redwood", "y": 90, "uvlock": true},
+    "east=true,north=true,south=true,west=true": {"model": "cfm:hedge_all_biomesoplenty_redwood", "uvlock": true}
+  }
+}
+

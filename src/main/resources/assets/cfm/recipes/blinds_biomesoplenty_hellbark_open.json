@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:blinds_biomesoplenty_hellbark_open",
+    "count": 2
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "biomesoplenty:log_2",
+      "data": 7
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}
+
+
+

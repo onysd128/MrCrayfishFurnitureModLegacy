@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:crate_biomesoplenty_jacaranda"
+  },
+  "pattern": [
+    "DOD",
+    "O O",
+    "DOD"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:log_3",
+      "data": 4
+    },
+    "O": {
+      "item": "biomesoplenty:planks_0",
+      "data": 12
+    }
+  }
+}
+
+
+

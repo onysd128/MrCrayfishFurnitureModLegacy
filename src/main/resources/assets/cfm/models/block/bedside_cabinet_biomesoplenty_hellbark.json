@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:block/bedside_cabinet",
+  "textures": {
+    "1": "biomesoplenty:blocks/hellbark_log",
+    "2": "biomesoplenty:blocks/hellbark_planks"
+  }
+}
+
+
+
+

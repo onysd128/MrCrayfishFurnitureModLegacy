@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:block/chair",
+  "textures": {
+    "1": "biomesoplenty:blocks/mahogany_planks",
+    "2": "biomesoplenty:blocks/mahogany_log"
+  }
+}
+
+
+
+

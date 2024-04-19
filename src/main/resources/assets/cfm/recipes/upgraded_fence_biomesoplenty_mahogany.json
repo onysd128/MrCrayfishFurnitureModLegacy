@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "cfm:upgraded_fence_biomesoplenty_mahogany",
+    "count": 8
+  },
+  "pattern": [
+    "FFF",
+    "FLF",
+    "FFF"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "item": "biomesoplenty:mahogany_fence",
+      "data": 0
+    },
+    "L": {
+      "item": "biomesoplenty:log_3",
+      "data": 5
+    }
+  }
+}
+
+
+

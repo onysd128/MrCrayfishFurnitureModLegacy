@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cfm:crate",
+    "textures": {
+      "primary": "biomesoplenty:blocks/ebony_log",
+      "secondary": "biomesoplenty:blocks/ebony_planks"
+    }
+  },
+  "variants": {
+    "inventory": {
+      "model": "cfm:crate"
+    },
+    "normal": {
+      "model": "cfm:crate"
+    }
+  }
+}
+
+

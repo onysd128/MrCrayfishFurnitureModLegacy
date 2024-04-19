@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "cfm:bedside_cabinet_biomesoplenty_pine"
+  },
+  "pattern": [
+    "***",
+    "*@*",
+    "*@*"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "@": {
+      "item": "minecraft:chest"
+    },
+    "*": {
+      "item": "biomesoplenty:planks_0",
+      "data": 10
+    }
+  }
+}
+
+
+
+
+

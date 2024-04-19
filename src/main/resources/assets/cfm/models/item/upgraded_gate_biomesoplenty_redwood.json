@@ -1,0 +1,10 @@
+{
+  "parent": "cfm:item/upgraded_gate",
+  "textures": {
+    "log": "biomesoplenty:blocks/redwood_log",
+    "plank": "biomesoplenty:blocks/redwood_planks"
+  }
+}
+
+
+

@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:block/bedside_cabinet",
+  "textures": {
+    "1": "biomesoplenty:blocks/eucalyptus_log",
+    "2": "biomesoplenty:blocks/eucalyptus_planks"
+  }
+}
+
+
+
+

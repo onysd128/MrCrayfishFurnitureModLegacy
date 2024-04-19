@@ -1,0 +1,27 @@
+{
+  "result": {
+    "item": "cfm:mail_box_biomesoplenty_umbran"
+  },
+  "pattern": [
+    "LBL",
+    "PPP",
+    " P "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:book"
+    },
+    "P": {
+      "item": "biomesoplenty:planks_0",
+      "data": 2
+    },
+    "L": {
+      "item": "biomesoplenty:log_0",
+      "data": 6
+    }
+  }
+}
+
+
+

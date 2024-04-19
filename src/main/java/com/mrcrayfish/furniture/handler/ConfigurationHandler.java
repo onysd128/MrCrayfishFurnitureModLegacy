@@ -13,8 +13,9 @@ import com.mrcrayfish.furniture.integration.crafttweaker.CraftTweakerIntegration
 
 public class ConfigurationHandler
 {
-    public static final String CATEGORY_RECIPE_SETTINGS = "recipe-settings";
     public static final String CATEGORY_API = "recipe-api";
+    public static final String CATEGORY_INTEGRATION_SETTINGS = "integration-settings";
+    public static final String CATEGORY_RECIPE_SETTINGS = "recipe-settings";
     public static final String CATEGORY_SETTINGS = "settings";
 
     public static Configuration config;
@@ -22,6 +23,7 @@ public class ConfigurationHandler
     public static boolean allowAllDishwasher = false;
     public static boolean allowAllWashingMachine = false;
     public static boolean api_debug = false;
+    public static boolean integrationBiomesOPlenty = true;
     public static boolean mirrorClouds = false;
     public static boolean mirrorEnabled = true;
     public static float mirrorFov = 80F;
@@ -53,7 +55,7 @@ public class ConfigurationHandler
 
     public static void init(File file)
     {
-        if(config == null)
+        if (config == null)
         {
             config = new Configuration(file);
             loadConfig(false);
@@ -73,6 +75,8 @@ public class ConfigurationHandler
         trustedUrlDomains = config.getStringList("trusted-url-domains", CATEGORY_SETTINGS, trustedUrlDomains, "List of trusted domains to download images for the TV and Photo Frame. For example, the domain of the URL (https://i.imgur.com/Jvh1OQm.jpeg) is i.imgur.com");
         trustedUrlDomainsListType = config.getString("trusted-url-domains-list-type", CATEGORY_SETTINGS, "WHITELIST", "Which list type the list of trusted domains is. Can be either WHITELIST or BLACKLIST.");
 
+        integrationBiomesOPlenty = config.getBoolean("integration-biomesoplenty", CATEGORY_INTEGRATION_SETTINGS, true, "Whether furniture with support for Biomes O' Plenty should be enabled.");
+
         items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");
 
         config.addCustomCategoryComment(CATEGORY_RECIPE_SETTINGS, "Enable or disable the default recipes");
@@ -80,14 +84,14 @@ public class ConfigurationHandler
 
         updateEnabledRecipes();
 
-        if(config.hasChanged() && shouldChange)
+        if (config.hasChanged() && shouldChange)
         {
             Recipes.clearLocalRecipes();
             Recipes.clearCommRecipes();
             RecipeRegistry.registerDefaultRecipes();
             RecipeRegistry.registerConfigRecipes();
             Recipes.addCommRecipesToLocal();
-            if(Loader.isModLoaded("crafttweaker"))
+            if (Loader.isModLoaded("crafttweaker"))
             {
                 CraftTweakerIntegration.apply();
             }
@@ -194,7 +198,7 @@ public class ConfigurationHandler
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs)
     {
-        if(eventArgs.getModID().equals("cfm"))
+        if (eventArgs.getModID().equals("cfm"))
         {
             loadConfig(true);
         }

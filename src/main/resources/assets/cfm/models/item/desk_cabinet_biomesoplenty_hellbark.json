@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:item/desk_cabinet",
+  "textures": {
+    "top": "blocks/hardened_clay_stained_black",
+    "primary": "biomesoplenty:blocks/hellbark_log",
+    "secondary": "biomesoplenty:blocks/hellbark_planks"
+  }
+}
+
+
+

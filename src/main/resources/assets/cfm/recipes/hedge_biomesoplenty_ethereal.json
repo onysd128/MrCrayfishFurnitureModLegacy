@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "cfm:hedge_biomesoplenty_ethereal",
+    "count": 4
+  },
+  "pattern": [
+    "***",
+    "***"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "biomesoplenty:leaves_1",
+      "data": 11
+    }
+  }
+}
+
+
+

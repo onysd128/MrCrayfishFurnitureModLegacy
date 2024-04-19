@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "cfm:park_bench_biomesoplenty_palm",
+    "count": 2
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "L L"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:planks_0",
+      "data": 7
+    },
+    "L": {
+      "item": "biomesoplenty:log_1",
+      "data": 7
+    }
+  }
+}
+
+
+

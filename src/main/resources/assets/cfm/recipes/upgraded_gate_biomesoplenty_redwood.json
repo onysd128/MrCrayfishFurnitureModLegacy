@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "cfm:upgraded_gate_biomesoplenty_redwood",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "biomesoplenty:redwood_fence_gate",
+      "data": 0
+    },
+    {
+      "item": "biomesoplenty:log_2",
+      "data": 4
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
+
+
+

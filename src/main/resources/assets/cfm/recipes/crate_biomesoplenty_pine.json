@@ -1,0 +1,26 @@
+{
+  "result": {
+    "item": "cfm:crate_biomesoplenty_pine"
+  },
+  "pattern": [
+    "DOD",
+    "O O",
+    "DOD"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "biomesoplenty:log_2",
+      "data": 6
+    },
+    "O": {
+      "item": "biomesoplenty:planks_0",
+      "data": 10
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+{
+  "parent": "cfm:block/blinds_closed_stringless",
+  "textures": {
+    "particle": "biomesoplenty:blocks/hellbark_log",
+    "1": "biomesoplenty:blocks/hellbark_log",
+    "2": "biomesoplenty:blocks/hellbark_planks",
+    "3": "blocks/concrete_white"
+  }
+}
+
+
+

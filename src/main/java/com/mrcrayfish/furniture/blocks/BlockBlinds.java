@@ -1,8 +1,7 @@
 package com.mrcrayfish.furniture.blocks;
 
-import com.mrcrayfish.furniture.advancement.Triggers;
-import com.mrcrayfish.furniture.init.FurnitureBlocks;
-import com.mrcrayfish.furniture.util.Bounds;
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -16,20 +15,21 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.Random;
+import com.mrcrayfish.furniture.advancement.Triggers;
+import com.mrcrayfish.furniture.util.Bounds;
 
 public class BlockBlinds extends BlockFurniture
 {
     public static final PropertyBool LEFT = PropertyBool.create("left");
     private static final AxisAlignedBB[] BOUNDING_BOX = new Bounds(0.875, 0.0, 0.0, 1.0, 1.0, 1.0).getRotatedBounds();
-
-    private Block replacementBlock;
 
     public BlockBlinds(Material material, boolean open)
     {
@@ -46,11 +46,6 @@ public class BlockBlinds extends BlockFurniture
         {
             this.setLightOpacity(0);
         }
-    }
-
-    public void setReplacementBlock(Block replacementBlock)
-    {
-        this.replacementBlock = replacementBlock;
     }
 
     @Override
@@ -80,39 +75,43 @@ public class BlockBlinds extends BlockFurniture
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         playerIn.playSound(SoundEvents.BLOCK_WOOD_PLACE, 1.0F, 1.0F);
-        return worldIn.setBlockState(pos, replacementBlock.getDefaultState().withProperty(FACING, state.getValue(FACING)));
+        return worldIn.setBlockState(pos, getReplacementBlockFromState(state).getDefaultState().withProperty(FACING, state.getValue(FACING)));
+    }
+
+    private Block getReplacementBlockFromState(IBlockState state)
+    {
+        ResourceLocation blockRegistryName = state.getBlock().getRegistryName();
+        String blockPath = blockRegistryName.getResourcePath();
+        if(blockPath.contains("_open"))
+        {
+            blockPath = blockPath.replace("_open", "_closed");
+        }
+        else if(blockPath.contains("_closed"))
+        {
+            blockPath = blockPath.replace("_closed", "_open");
+        }
+        ResourceLocation replacementBlockRegistryName = new ResourceLocation(blockRegistryName.getResourceDomain(), blockPath);
+        return ForgeRegistries.BLOCKS.getValue(replacementBlockRegistryName);
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        if(state.getBlock() == FurnitureBlocks.BLINDS_ACACIA || state.getBlock() == FurnitureBlocks.BLINDS_ACACIA_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_ACACIA).getItem();
-        if(state.getBlock() == FurnitureBlocks.BLINDS_BIRCH || state.getBlock() == FurnitureBlocks.BLINDS_BIRCH_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_BIRCH).getItem();
-        if(state.getBlock() == FurnitureBlocks.BLINDS_SPRUCE || state.getBlock() == FurnitureBlocks.BLINDS_SPRUCE_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_SPRUCE).getItem();
-        if(state.getBlock() == FurnitureBlocks.BLINDS_JUNGLE || state.getBlock() == FurnitureBlocks.BLINDS_JUNGLE_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_JUNGLE).getItem();
-        if(state.getBlock() == FurnitureBlocks.BLINDS_DARK_OAK || state.getBlock() == FurnitureBlocks.BLINDS_DARK_OAK_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_DARK_OAK).getItem();
-        return new ItemStack(FurnitureBlocks.BLINDS_OAK).getItem();
+        return getItemFromState(state);
     }
 
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        if(state.getBlock() == FurnitureBlocks.BLINDS_ACACIA || state.getBlock() == FurnitureBlocks.BLINDS_ACACIA_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_ACACIA);
-        if(state.getBlock() == FurnitureBlocks.BLINDS_BIRCH || state.getBlock() == FurnitureBlocks.BLINDS_BIRCH_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_BIRCH);
-        if(state.getBlock() == FurnitureBlocks.BLINDS_SPRUCE || state.getBlock() == FurnitureBlocks.BLINDS_SPRUCE_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_SPRUCE);
-        if(state.getBlock() == FurnitureBlocks.BLINDS_JUNGLE || state.getBlock() == FurnitureBlocks.BLINDS_JUNGLE_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_JUNGLE);
-        if(state.getBlock() == FurnitureBlocks.BLINDS_DARK_OAK || state.getBlock() == FurnitureBlocks.BLINDS_DARK_OAK_CLOSED)
-            return new ItemStack(FurnitureBlocks.BLINDS_DARK_OAK);
-        return new ItemStack(FurnitureBlocks.BLINDS_OAK);
+        return new ItemStack(getItemFromState(state));
+    }
+
+    private Item getItemFromState(IBlockState state)
+    {
+        ResourceLocation blockRegistryName = state.getBlock().getRegistryName();
+        String itemName = blockRegistryName.getResourcePath().replace("_closed", "_open");
+        ResourceLocation itemRegistryName = new ResourceLocation(blockRegistryName.getResourceDomain(), itemName);
+        return ForgeRegistries.ITEMS.getValue(itemRegistryName);
     }
 
     @Override

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,west=false": {"model": "cfm:hedge_none_biomesoplenty_ethereal", "uvlock": true},
+    "east=false,north=true,south=false,west=false": {"model": "cfm:hedge_one_biomesoplenty_ethereal", "uvlock": true},
+    "east=true,north=false,south=false,west=false": {"model": "cfm:hedge_one_biomesoplenty_ethereal", "y": 90, "uvlock": true},
+    "east=false,north=false,south=true,west=false": {"model": "cfm:hedge_one_biomesoplenty_ethereal", "y": 180, "uvlock": true},
+    "east=false,north=false,south=false,west=true": {"model": "cfm:hedge_one_biomesoplenty_ethereal", "y": 270, "uvlock": true},
+    "east=true,north=true,south=false,west=false": {"model": "cfm:hedge_two_biomesoplenty_ethereal", "uvlock": true},
+    "east=false,north=true,south=true,west=false": {"model": "cfm:hedge_two_alt_biomesoplenty_ethereal", "uvlock": true},
+    "east=false,north=true,south=false,west=true": {"model": "cfm:hedge_two_biomesoplenty_ethereal", "y": 270, "uvlock": true},
+    "east=true,north=false,south=false,west=true": {"model": "cfm:hedge_two_alt_biomesoplenty_ethereal", "y": 90, "uvlock": true},
+    "east=true,north=false,south=true,west=false": {"model": "cfm:hedge_two_biomesoplenty_ethereal", "y": 90, "uvlock": true},
+    "east=false,north=false,south=true,west=true": {"model": "cfm:hedge_two_biomesoplenty_ethereal", "y": 180, "uvlock": true},
+    "east=true,north=true,south=true,west=true": {"model": "cfm:hedge_four_biomesoplenty_ethereal", "uvlock": true},
+    "east=true,north=true,south=true,west=false": {"model": "cfm:hedge_three_biomesoplenty_ethereal", "uvlock": true},
+    "east=true,north=true,south=false,west=true": {"model": "cfm:hedge_three_biomesoplenty_ethereal", "y": 270, "uvlock": true},
+    "east=false,north=true,south=true,west=true": {"model": "cfm:hedge_three_biomesoplenty_ethereal", "y": 180, "uvlock": true},
+    "east=true,north=false,south=true,west=true": {"model": "cfm:hedge_three_biomesoplenty_ethereal", "y": 90, "uvlock": true},
+    "east=true,north=true,south=true,west=true": {"model": "cfm:hedge_all_biomesoplenty_ethereal", "uvlock": true}
+  }
+}
+

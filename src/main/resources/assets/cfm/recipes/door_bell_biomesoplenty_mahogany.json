@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "cfm:door_bell_biomesoplenty_mahogany"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:noteblock"
+    },
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "biomesoplenty:log_3",
+      "data": 5
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
+
+
+

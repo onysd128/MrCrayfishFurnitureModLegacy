@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "cfm:chair_biomesoplenty_pine"
+  },
+  "pattern": [
+    "*  ",
+    "***",
+    "* *"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "biomesoplenty:planks_0",
+      "data": 10
+    }
+  }
+}
+
+
+
+
+

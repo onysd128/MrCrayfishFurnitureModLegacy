@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "cfm:upgraded_gate_biomesoplenty_ebony",
+    "count": 2
+  },
+  "ingredients": [
+    {
+      "item": "biomesoplenty:ebony_fence_gate",
+      "data": 0
+    },
+    {
+      "item": "biomesoplenty:log_3",
+      "data": 6
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
+
+
+

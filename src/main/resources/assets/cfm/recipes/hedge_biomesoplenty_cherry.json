@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "cfm:hedge_biomesoplenty_cherry",
+    "count": 4
+  },
+  "pattern": [
+    "***",
+    "***"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "*": {
+      "item": "biomesoplenty:leaves_2",
+      "data": 9
+    }
+  }
+}
+
+
+

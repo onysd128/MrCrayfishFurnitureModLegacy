@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "cfm:blinds_biomesoplenty_palm_open",
+    "count": 2
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "biomesoplenty:log_1",
+      "data": 7
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}
+
+
+

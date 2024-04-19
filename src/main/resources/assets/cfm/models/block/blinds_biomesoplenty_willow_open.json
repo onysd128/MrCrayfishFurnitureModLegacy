@@ -1,0 +1,12 @@
+{
+  "parent": "cfm:block/blinds_open",
+  "textures": {
+    "particle": "biomesoplenty:blocks/willow_log",
+    "1": "biomesoplenty:blocks/willow_log",
+    "2": "biomesoplenty:blocks/willow_planks",
+    "3": "blocks/concrete_white"
+  }
+}
+
+
+

@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "cfm:park_bench_biomesoplenty_mangrove",
+    "count": 2
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "L L"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:planks_0",
+      "data": 6
+    },
+    "L": {
+      "item": "biomesoplenty:log_1",
+      "data": 6
+    }
+  }
+}
+
+
+

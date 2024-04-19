@@ -1,0 +1,11 @@
+{
+  "parent": "cfm:block/mail_box",
+  "textures": {
+    "primary": "biomesoplenty:blocks/jacaranda_planks",
+    "secondary": "biomesoplenty:blocks/jacaranda_log"
+  }
+}
+
+
+
+

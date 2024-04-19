@@ -1,0 +1,10 @@
+{
+  "parent": "cfm:block/upgraded_gate_left_closed_alt",
+  "textures": {
+    "log": "biomesoplenty:blocks/eucalyptus_log",
+    "plank": "biomesoplenty:blocks/eucalyptus_planks"
+  }
+}
+
+
+

@@ -1,0 +1,10 @@
+{
+  "parent": "cfm:block/park_bench_right",
+  "textures": {
+    "log": "biomesoplenty:blocks/mangrove_log",
+    "plank": "biomesoplenty:blocks/mangrove_planks"
+  }
+}
+
+
+

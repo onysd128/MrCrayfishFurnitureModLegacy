@@ -1,0 +1,10 @@
+{
+  "parent": "cfm:block/hedge_all",
+  "textures": {
+    "1": "biomesoplenty:blocks/leaves_sacred_oak"
+  }
+}
+
+
+
+

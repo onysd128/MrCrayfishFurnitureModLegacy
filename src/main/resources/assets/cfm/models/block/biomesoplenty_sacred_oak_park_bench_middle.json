@@ -1,0 +1,10 @@
+{
+  "parent": "cfm:block/park_bench_middle",
+  "textures": {
+    "log": "biomesoplenty:blocks/sacred_oak_log",
+    "plank": "biomesoplenty:blocks/sacred_oak_planks"
+  }
+}
+
+
+

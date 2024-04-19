@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "cfm:cabinet_biomesoplenty_magic"
+  },
+  "pattern": [
+    "***",
+    "*@*",
+    "***"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "@": {
+      "item": "minecraft:chest"
+    },
+    "*": {
+      "item": "biomesoplenty:planks_0",
+      "data": 5
+    }
+  }
+}
+
+
+

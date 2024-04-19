@@ -136,18 +136,6 @@ public class FurnitureBlocks
         BLINDS_ACACIA_CLOSED = (BlockBlinds) new BlockBlinds(Material.WOOD, false).setUnlocalizedName("blinds_acacia_closed").setRegistryName("blinds_acacia_closed");
         BLINDS_DARK_OAK = (BlockBlinds) new BlockBlinds(Material.WOOD, true).setUnlocalizedName("blinds_dark_oak_open").setRegistryName("blinds_dark_oak_open");
         BLINDS_DARK_OAK_CLOSED = (BlockBlinds) new BlockBlinds(Material.WOOD, false).setUnlocalizedName("blinds_dark_oak_closed").setRegistryName("blinds_dark_oak_closed");
-        BLINDS_OAK.setReplacementBlock(BLINDS_OAK_CLOSED);
-        BLINDS_OAK_CLOSED.setReplacementBlock(BLINDS_OAK);
-        BLINDS_SPRUCE.setReplacementBlock(BLINDS_SPRUCE_CLOSED);
-        BLINDS_SPRUCE_CLOSED.setReplacementBlock(BLINDS_SPRUCE);
-        BLINDS_BIRCH.setReplacementBlock(BLINDS_BIRCH_CLOSED);
-        BLINDS_BIRCH_CLOSED.setReplacementBlock(BLINDS_BIRCH);
-        BLINDS_JUNGLE.setReplacementBlock(BLINDS_JUNGLE_CLOSED);
-        BLINDS_JUNGLE_CLOSED.setReplacementBlock(BLINDS_JUNGLE);
-        BLINDS_ACACIA.setReplacementBlock(BLINDS_ACACIA_CLOSED);
-        BLINDS_ACACIA_CLOSED.setReplacementBlock(BLINDS_ACACIA);
-        BLINDS_DARK_OAK.setReplacementBlock(BLINDS_DARK_OAK_CLOSED);
-        BLINDS_DARK_OAK_CLOSED.setReplacementBlock(BLINDS_DARK_OAK);
         CURTAINS = new BlockCurtainsOpen(Material.CLOTH).setUnlocalizedName("curtains_open").setRegistryName("curtains_open");
         CURTAINS_CLOSED = new BlockCurtainsClosed(Material.CLOTH).setUnlocalizedName("curtains_closed").setRegistryName("curtains_closed");
         BEDSIDE_CABINET_OAK = new BlockBedsideCabinet(Material.WOOD).setUnlocalizedName("bedside_cabinet_oak").setRegistryName("bedside_cabinet_oak");
@@ -541,12 +529,12 @@ public class FurnitureBlocks
         registerBlock(CASTLE_NETTING);
     }
 
-    private static void registerBlock(Block block)
+    public static void registerBlock(Block block)
     {
         registerBlock(block, new ItemBlock(block));
     }
 
-    private static void registerBlock(Block block, ItemBlock item)
+    public static void registerBlock(Block block, ItemBlock item)
     {
         if(block.getRegistryName() == null)
             throw new IllegalArgumentException("A block being registered does not have a registry name and could be successfully registered.");

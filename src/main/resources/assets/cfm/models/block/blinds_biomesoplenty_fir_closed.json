@@ -1,0 +1,12 @@
+{
+  "parent": "cfm:block/blinds_closed",
+  "textures": {
+    "particle": "biomesoplenty:blocks/fir_log",
+    "1": "biomesoplenty:blocks/fir_log",
+    "2": "biomesoplenty:blocks/fir_planks",
+    "3": "blocks/concrete_white"
+  }
+}
+
+
+
