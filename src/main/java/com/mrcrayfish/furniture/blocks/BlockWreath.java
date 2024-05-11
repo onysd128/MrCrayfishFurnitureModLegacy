@@ -50,7 +50,6 @@ public class BlockWreath extends BlockFurniture
         return side.getHorizontalIndex() != -1;
     }
 
-
     private boolean canPlaceCheck(World world, BlockPos pos, IBlockState state)
     {
         EnumFacing enumfacing = state.getValue(FACING);
@@ -69,7 +68,7 @@ public class BlockWreath extends BlockFurniture
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return this.getDefaultState().withProperty(FACING, facing.getOpposite());
+        return this.getDefaultState().withProperty(FACING, this.canPlaceBlockOnSide(worldIn, pos, facing) ? facing.getOpposite() : EnumFacing.NORTH);
     }
 
     @Override

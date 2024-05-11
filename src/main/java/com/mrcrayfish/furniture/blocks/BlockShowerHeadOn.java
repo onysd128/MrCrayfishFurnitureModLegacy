@@ -75,9 +75,8 @@ public class BlockShowerHeadOn extends BlockFurnitureTile
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         IBlockState state = super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer);
-        return state.withProperty(FACING, facing.getOpposite());
+        return state.withProperty(FACING, this.canPlaceBlockOnSide(world, pos, facing) ? facing.getOpposite() : EnumFacing.NORTH);
     }
-
 
     @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)

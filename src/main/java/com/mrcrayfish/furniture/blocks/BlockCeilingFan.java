@@ -125,7 +125,7 @@ public class BlockCeilingFan extends Block implements IPowered {
     @Override
     public boolean canPlaceBlockOnSide(World world, BlockPos pos, EnumFacing side)
     {
-        return true;
+        return side == EnumFacing.DOWN;
     }
 
     @Override

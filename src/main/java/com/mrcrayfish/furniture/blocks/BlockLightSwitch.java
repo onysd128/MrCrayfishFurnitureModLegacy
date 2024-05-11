@@ -145,6 +145,6 @@ public class BlockLightSwitch extends BlockFurniture
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return this.getDefaultState().withProperty(FACING, facing.getOpposite());
+        return this.getDefaultState().withProperty(FACING, this.canPlaceBlockOnSide(worldIn, pos, facing) ? facing.getOpposite() : EnumFacing.NORTH);
     }
 }
