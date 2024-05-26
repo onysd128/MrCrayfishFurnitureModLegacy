@@ -1,6 +1,7 @@
 package com.mrcrayfish.furniture.client;
 
 import com.google.common.primitives.Longs;
+import com.mrcrayfish.furniture.handler.ConfigurationHandler;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class ImageDownloadThread extends Thread
     private static final Set<String> LOADING_URLS = new HashSet<>();
 
     //Prevents GIFs larger than 2MB from loading
-    private static final long MAX_FILE_SIZE = 2097152;
+    private static final long MAX_FILE_SIZE = (long) ConfigurationHandler.maxFileSize * 1024 * 1024;
 
     private URI uri;
     private ResponseProcessor processor;
@@ -106,7 +107,7 @@ public class ImageDownloadThread extends Thread
 
             if(length > MAX_FILE_SIZE)
             {
-                processor.process(ImageDownloadResult.TOO_LARGE, "The image is greater than " + MAX_FILE_SIZE / 1024.0 + "MB");
+                processor.process(ImageDownloadResult.TOO_LARGE, "The image is greater than " + (MAX_FILE_SIZE / 1024) / 1024 + "MB");
                 return;
             }
 
