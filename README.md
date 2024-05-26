@@ -8,26 +8,31 @@ This mod is an **unofficial** continuation and is not affiliated with MrCrayfish
 
 **Changes so far:**
 
+* Added Biomes O' Plenty support
 * Added bath advancement
 * Added computer GUI item data range checks
+* Added configurable image/GIF file sizes
 * Added dishwasher & washing machine input configs
 * Added seasonal presents config setting
 * Added toaster easter egg
 * Added trusted URL domains list type config
 * Adjusted block hardness values
+* Disabled creative categories until rework
 * Enabled infinite mirror reflections
 * Fixed blinds always returning oak
 * Fixed breaking of curtains
 * Fixed colors of curtains
+* Fixed doormat text z-fighting
 * Fixed dropping of unsealed crate content when broken
 * Fixed duplication and shift-clicking in envelopes, crates and presents
+* Fixed edge-case placement crashes
 * Fixed farting button handling
 * Fixed modern stairs block material
 * Fixed pick block functionality for coolers
 * Fixed recipes for coolers
 * Fixed soapy water bucket duplication
+* Fixed spruce mailbox recipe name typo
 * Fixed steam particle typo
-* Made ceiling fan placeable in any orientation, add advancement
 * Removed arbitrary jump height limits
 * Restructured configuration handler
 * Streamlined default mirror quality config
