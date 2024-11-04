@@ -27,6 +27,7 @@ This mod is an **unofficial** continuation and is not affiliated with MrCrayfish
 * Fixed duplication and shift-clicking in envelopes, crates and presents
 * Fixed edge-case placement crashes
 * Fixed farting button handling
+* Fixed image/GIF downloading (especially imgur)
 * Fixed modern stairs block material
 * Fixed pick block functionality for coolers
 * Fixed recipes for coolers
