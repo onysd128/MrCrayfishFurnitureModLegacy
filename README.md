@@ -20,6 +20,7 @@ This mod is an **unofficial** continuation and is not affiliated with MrCrayfish
 * Disabled creative categories until rework
 * Enabled infinite mirror reflections
 * Fixed blinds always returning oak
+* Fixed block orientation checks
 * Fixed breaking of curtains
 * Fixed colors of curtains
 * Fixed doormat text z-fighting
