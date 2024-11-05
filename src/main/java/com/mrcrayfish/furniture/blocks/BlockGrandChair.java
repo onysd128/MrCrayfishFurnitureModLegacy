@@ -49,6 +49,10 @@ public class BlockGrandChair extends BlockFurniture
     @Override
     public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
+        if(this == FurnitureBlocks.GRAND_CHAIR_BOTTOM)
+        {
+            world.setBlockState(pos.up(), FurnitureBlocks.GRAND_CHAIR_TOP.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()));
+        }
         if(placer instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) placer;
@@ -81,16 +85,6 @@ public class BlockGrandChair extends BlockFurniture
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
         return worldIn.isAirBlock(pos) && worldIn.isAirBlock(pos.up());
-    }
-
-    @Override
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        if(this == FurnitureBlocks.GRAND_CHAIR_BOTTOM)
-        {
-            world.setBlockState(pos.up(), FurnitureBlocks.GRAND_CHAIR_TOP.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()));
-        }
-        return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer);
     }
 
     @Override

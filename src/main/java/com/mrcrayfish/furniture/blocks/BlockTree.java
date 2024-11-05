@@ -41,17 +41,19 @@ public class BlockTree extends BlockFurnitureTile
     }
 
     @Override
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        return worldIn.isAirBlock(pos) && worldIn.isAirBlock(pos.up());
+        if(this == FurnitureBlocks.TREE_BOTTOM)
+        {
+            world.setBlockState(pos.up(), FurnitureBlocks.TREE_TOP.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()));
+        }
+        super.onBlockPlacedBy(world, pos, state, placer, stack);
     }
 
     @Override
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
-        if(this == FurnitureBlocks.TREE_BOTTOM)
-            world.setBlockState(pos.up(), FurnitureBlocks.TREE_TOP.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()));
-        return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer);
+        return worldIn.isAirBlock(pos) && worldIn.isAirBlock(pos.up());
     }
 
     @Override
