@@ -1,6 +1,5 @@
 package com.mrcrayfish.furniture.gui.containers;
 
-import com.mrcrayfish.furniture.gui.slots.SlotWallCabinet;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
@@ -21,7 +20,7 @@ public class ContainerWallCabinet extends Container
         {
             for(int j = 0; j < 3; j++)
             {
-                this.addSlotToContainer(new SlotWallCabinet(wallCabinetInventory, j + i * 3, j * 18 + 62, i * 27 + 17));
+                this.addSlotToContainer(new Slot(wallCabinetInventory, j + i * 3, j * 18 + 62, i * 27 + 17));
             }
         }
 
@@ -55,8 +54,6 @@ public class ContainerWallCabinet extends Container
         {
             ItemStack item = slot.getStack();
             itemCopy = item.copy();
-
-            if(!(item.getItem() instanceof ItemPotion)) return ItemStack.EMPTY;
 
             if(slotNum < 9)
             {

@@ -1,6 +1,5 @@
 package com.mrcrayfish.furniture.gui.containers;
 
-import com.mrcrayfish.furniture.gui.slots.SlotEski;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
@@ -20,7 +19,7 @@ public class ContainerEski extends Container
         {
             for(int x = 0; x < 4; x++)
             {
-                this.addSlotToContainer(new SlotEski(inventory, x + y * 4, x * 18 + 53, y * 18 + 12));
+                this.addSlotToContainer(new Slot(inventory, x + y * 4, x * 18 + 53, y * 18 + 12));
             }
         }
 
@@ -54,8 +53,6 @@ public class ContainerEski extends Container
         {
             ItemStack item = slot.getStack();
             itemCopy = item.copy();
-
-            if(!(item.getItem() instanceof ItemPotion)) return ItemStack.EMPTY;
 
             if(slotNum < inventory.getSizeInventory())
             {

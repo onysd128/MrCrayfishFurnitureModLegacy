@@ -31,10 +31,13 @@ This mod is an **unofficial** continuation and is not affiliated with MrCrayfish
 * Fixed image/GIF downloading (especially imgur)
 * Fixed modern stairs block material
 * Fixed pick block functionality for coolers
+* Fixed placement of Grand Chair + Christmas Tree
 * Fixed recipes for coolers
+* Fixed sliding door redstone handling
 * Fixed soapy water bucket duplication
 * Fixed spruce mailbox recipe name typo
 * Fixed steam particle typo
+* Reduced arbitrary container limitations
 * Removed arbitrary jump height limits
 * Restructured configuration handler
 * Streamlined default mirror quality config
