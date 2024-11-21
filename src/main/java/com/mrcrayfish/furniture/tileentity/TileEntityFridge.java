@@ -5,7 +5,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 
@@ -34,7 +33,7 @@ public class TileEntityFridge extends TileEntityFurniture implements ISidedInven
     @Override
     public boolean canInsertItem(int index, ItemStack stack, EnumFacing direction)
     {
-        return stack.getItem() instanceof ItemFood && !isLocked();
+        return !isLocked();
     }
 
     @Override

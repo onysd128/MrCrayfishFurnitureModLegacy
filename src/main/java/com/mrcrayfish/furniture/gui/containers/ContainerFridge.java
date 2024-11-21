@@ -1,11 +1,9 @@
 package com.mrcrayfish.furniture.gui.containers;
 
-import com.mrcrayfish.furniture.gui.slots.SlotFridge;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
 public class ContainerFridge extends Container
@@ -22,7 +20,7 @@ public class ContainerFridge extends Container
         {
             for(int j = 0; j < 5; j++)
             {
-                this.addSlotToContainer(new SlotFridge(fridgeInventory, count, j * 18 + 44, i * 18 + 18));
+                this.addSlotToContainer(new Slot(fridgeInventory, count, j * 18 + 44, i * 18 + 18));
                 count++;
             }
         }
@@ -55,8 +53,6 @@ public class ContainerFridge extends Container
         {
             ItemStack var5 = var4.getStack();
             var3 = var5.copy();
-
-            if(!(var5.getItem() instanceof ItemFood)) return ItemStack.EMPTY;
 
             if(par2 < 16)
             {
