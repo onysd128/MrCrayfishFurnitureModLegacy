@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "modid"
+    }
+  ],
   "result": {
     "item": "cfm:blinds_modid_wood_open",
     "count": 2

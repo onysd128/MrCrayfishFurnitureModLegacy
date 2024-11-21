@@ -12,4 +12,5 @@ modid:blocks/leaves_texture
 "data": fence
 "item": "modid:gate"
 "data": gate
+"modid": "modid"
 Mod Wood

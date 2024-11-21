@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "modid"
+    }
+  ],
   "result": {
     "item": "cfm:upgraded_gate_modid_wood",
     "count": 2

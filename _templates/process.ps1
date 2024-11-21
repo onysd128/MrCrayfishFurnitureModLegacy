@@ -15,10 +15,10 @@ $replacementValues = Get-Content -Path $newWoodFilePath
 
 # Define keys to replace
 $keys = @(
-    "modid_wood",
-    "modid:blocks/log_texture",
-    "modid:blocks/planks_texture",
-    "modid:blocks/leaves_texture",
+    'modid_wood',
+    'modid:blocks/log_texture',
+    'modid:blocks/planks_texture',
+    'modid:blocks/leaves_texture',
     '"item": "modid:log"',
     '"data": log',
     '"item": "modid:planks"',
@@ -29,7 +29,8 @@ $keys = @(
     '"data": fence',
     '"item": "modid:gate"',
     '"data": gate',
-    "Mod Wood"
+    '"modid": "modid"',
+    'Mod Wood'
 )
 
 # Function to recursively replace text in files and file names
