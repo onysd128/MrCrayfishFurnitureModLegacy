@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:door_bell_biomesoplenty_eucalyptus"
   },
@@ -16,6 +22,3 @@
   ],
   "type": "minecraft:crafting_shapeless"
 }
-
-
-

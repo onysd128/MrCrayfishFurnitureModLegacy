@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:desk_cabinet_biomesoplenty_magic"
   },
@@ -22,6 +28,3 @@
     }
   }
 }
-
-
-

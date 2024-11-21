@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:cabinet_biomesoplenty_pine"
   },
@@ -18,8 +24,3 @@
     }
   }
 }
-
-
-
-
-

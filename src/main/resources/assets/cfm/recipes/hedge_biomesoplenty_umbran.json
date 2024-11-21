@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:hedge_biomesoplenty_umbran",
     "count": 4
@@ -15,6 +21,3 @@
     }
   }
 }
-
-
-

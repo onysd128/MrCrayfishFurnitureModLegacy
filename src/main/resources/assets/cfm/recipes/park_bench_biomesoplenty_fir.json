@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:park_bench_biomesoplenty_fir",
     "count": 2
@@ -20,6 +26,3 @@
     }
   }
 }
-
-
-

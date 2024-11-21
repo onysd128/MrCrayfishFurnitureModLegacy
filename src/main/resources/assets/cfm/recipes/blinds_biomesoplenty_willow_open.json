@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:blinds_biomesoplenty_willow_open",
     "count": 2
@@ -19,6 +25,3 @@
     }
   }
 }
-
-
-

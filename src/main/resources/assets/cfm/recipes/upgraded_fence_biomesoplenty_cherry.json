@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:upgraded_fence_biomesoplenty_cherry",
     "count": 8
@@ -20,6 +26,3 @@
     }
   }
 }
-
-
-

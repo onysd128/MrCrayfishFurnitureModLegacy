@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:mail_box_biomesoplenty_magic"
   },
@@ -22,6 +28,3 @@
     }
   }
 }
-
-
-

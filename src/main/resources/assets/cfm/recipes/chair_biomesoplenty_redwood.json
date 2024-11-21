@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
   "result": {
     "item": "cfm:chair_biomesoplenty_redwood"
   },
@@ -15,6 +21,3 @@
     }
   }
 }
-
-
-
